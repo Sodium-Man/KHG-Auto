@@ -25,14 +25,21 @@ function vehicleGallery(v) {
   const images = getVehicleImages(v);
   if (!images.length) return vehicleImage(v);
 
+  const sliderControls = images.length > 1 ? `
+        <button class="gallery-nav gallery-prev" type="button" aria-label="Previous vehicle image">‹</button>
+        <button class="gallery-nav gallery-next" type="button" aria-label="Next vehicle image">›</button>` : "";
+
   const thumbnails = images.map((src, index) => `
-    <button class="gallery-thumb ${index === 0 ? "active" : ""}" type="button" data-gallery-image="${src}" aria-label="View image ${index + 1} of ${v.title}">
+    <button class="gallery-thumb ${index === 0 ? "active" : ""}" type="button" data-gallery-index="${index}" data-gallery-image="${src}" aria-label="View image ${index + 1} of ${v.title}">
       <img src="${src}" alt="${v.title} image ${index + 1}">
     </button>`).join("");
 
   return `
-    <div class="vehicle-gallery">
-      <div class="gallery-main vehicle-image"><img src="${images[0]}" alt="${v.title}" id="mainVehicleImage"></div>
+    <div class="vehicle-gallery" data-gallery-count="${images.length}">
+      <div class="gallery-main vehicle-image">
+        <img src="${images[0]}" alt="${v.title}" id="mainVehicleImage" data-gallery-index="0">
+        ${sliderControls}
+      </div>
       <aside class="gallery-sidebar" aria-label="Vehicle image gallery">${thumbnails}</aside>
     </div>`;
 }
@@ -360,17 +367,30 @@ function setupVehicleDetail() {
     </div>`;
 
   const mainImage = root.querySelector("#mainVehicleImage");
-  const galleryButtons = root.querySelectorAll(".gallery-thumb");
-  galleryButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const nextImage = button.dataset.galleryImage;
-      if (!mainImage || !nextImage) return;
-      mainImage.src = nextImage;
-      mainImage.alt = `${v.title} selected image`;
-      galleryButtons.forEach(item => item.classList.remove("active"));
-      button.classList.add("active");
-    });
+  const galleryButtons = Array.from(root.querySelectorAll(".gallery-thumb"));
+  let activeGalleryIndex = 0;
+
+  function showGalleryImage(index) {
+    if (!mainImage || !galleryButtons.length) return;
+    const totalImages = galleryButtons.length;
+    activeGalleryIndex = (index + totalImages) % totalImages;
+    const activeButton = galleryButtons[activeGalleryIndex];
+    const nextImage = activeButton?.dataset.galleryImage;
+    if (!nextImage) return;
+    mainImage.src = nextImage;
+    mainImage.alt = `${v.title} image ${activeGalleryIndex + 1}`;
+    mainImage.dataset.galleryIndex = String(activeGalleryIndex);
+    galleryButtons.forEach(item => item.classList.remove("active"));
+    activeButton.classList.add("active");
+    activeButton.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  }
+
+  galleryButtons.forEach((button, index) => {
+    button.addEventListener("click", () => showGalleryImage(index));
   });
+
+  root.querySelector(".gallery-prev")?.addEventListener("click", () => showGalleryImage(activeGalleryIndex - 1));
+  root.querySelector(".gallery-next")?.addEventListener("click", () => showGalleryImage(activeGalleryIndex + 1));
 }
 
 setupMobileMenu();

@@ -334,25 +334,48 @@ footer h3 { margin: 0 0 14px; }
 .mobile-slider-controls { display: none; justify-content: center; margin-top: 8px; }
 .vehicle-gallery {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 118px;
+  grid-template-columns: 1fr;
   gap: 16px;
-  align-items: stretch;
 }
 .vehicle-gallery .gallery-main {
   height: 480px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
 }
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255,255,255,.92);
+  color: var(--blue-dark);
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, .22);
+  z-index: 3;
+}
+.gallery-prev { left: 16px; }
+.gallery-next { right: 16px; }
+.gallery-nav:hover { transform: translateY(-50%) scale(1.04); }
 .gallery-sidebar {
-  max-height: 480px;
-  overflow-y: auto;
-  display: grid;
+  display: flex;
   gap: 12px;
-  padding: 2px 4px 2px 2px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 2px 12px;
   scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 .gallery-thumb {
-  width: 100%;
+  flex: 0 0 112px;
+  width: 112px;
   aspect-ratio: 4 / 3;
   padding: 0;
   border: 3px solid transparent;
@@ -360,6 +383,7 @@ footer h3 { margin: 0 0 14px; }
   overflow: hidden;
   background: #fff;
   box-shadow: 0 8px 22px rgba(15, 23, 42, .12);
+  cursor: pointer;
 }
 .gallery-thumb:hover { transform: translateY(-1px); }
 .gallery-thumb.active { border-color: var(--blue); }
@@ -387,9 +411,8 @@ footer h3 { margin: 0 0 14px; }
   .detail-layout { grid-template-columns: 1fr; }
   .sticky-card { position: static; }
   .detail-main > .vehicle-image { height: 360px; }
-  .vehicle-gallery { grid-template-columns: 1fr; }
   .vehicle-gallery .gallery-main { height: 360px; }
-  .gallery-sidebar { max-height: none; overflow-x: auto; overflow-y: hidden; grid-auto-flow: column; grid-auto-columns: 104px; }
+  .gallery-thumb { flex-basis: 104px; width: 104px; }
 }
 @media (max-width: 650px) {
   .section-head { align-items: start; flex-direction: column; }
@@ -398,7 +421,10 @@ footer h3 { margin: 0 0 14px; }
   .carousel-track { grid-auto-columns: minmax(86vw, 1fr); }
   .detail-main > .vehicle-image { height: 260px; }
   .vehicle-gallery .gallery-main { height: 260px; }
-  .gallery-sidebar { grid-auto-columns: 88px; }
+  .gallery-nav { width: 38px; height: 38px; font-size: 28px; }
+  .gallery-prev { left: 10px; }
+  .gallery-next { right: 10px; }
+  .gallery-thumb { flex-basis: 88px; width: 88px; }
   .spec-list div { flex-direction: column; gap: 4px; }
   .spec-list span { text-align: left; }
 }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Used Vehicles For Sale Clayton South | KHG Auto Workshops</title>
+  <meta name="description" content="Browse KHG Auto Workshops used vehicles in Clayton South. Search current stock and enquire by email or phone for inspections, finance and trade-in options." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="top-strip"><div class="container"><span>Used vehicle enquiries in Clayton South</span><span><a href="tel:0440139012">0440 139 012</a> · <a href="mailto:info@khgautoworkshops.com.au">info@khgautoworkshops.com.au</a></span></div></div>
+  <header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/logo.png" alt="KHG Auto Workshops logo"><span>KHG Auto<br>Workshops</span></a><nav><a href="index.html">Home</a><a href="vehicles.html">Vehicles</a><a href="sell-your-car.html">Sell Your Car</a><a href="finance.html">Finance</a><a href="contact.html">Contact</a></nav><div class="nav-actions"><a class="btn call-btn" href="tel:0440139012">Call Now</a><button class="btn menu-btn" type="button">Menu</button></div></div></header>
+
+  <section class="page-title"><div class="container"><span class="eyebrow">Vehicles</span><h1>Vehicles for sale</h1><p>Browse dummy stock now and replace it with your real vehicle details and photos when ready.</p></div></section>
+
+  <main class="container section">
+    <div class="filters">
+      <input id="searchInput" type="text" placeholder="Search make, model, year, fuel or transmission..." aria-label="Search vehicles" />
+      <select id="priceFilter" aria-label="Filter by price">
+        <option value="all">All prices</option>
+        <option value="15000">Under $15,000</option>
+        <option value="25000">Under $25,000</option>
+        <option value="50000">Under $50,000</option>
+      </select>
+      <select id="bodyFilter" aria-label="Filter by body type">
+        <option value="all">All body types</option>
+      </select>
+      <select id="transmissionFilter" aria-label="Filter by transmission">
+        <option value="all">All transmissions</option>
+      </select>
+      <select id="fuelFilter" aria-label="Filter by fuel type">
+        <option value="all">All fuel types</option>
+      </select>
+      <select id="sortFilter" aria-label="Sort vehicles">
+        <option value="featured">Sort: Featured</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="year-new">Year: Newest First</option>
+        <option value="year-old">Year: Oldest First</option>
+        <option value="km-low">Kilometres: Low to High</option>
+      </select>
+    </div>
+    <div class="vehicle-results-bar">
+      <span id="vehicleCount">Showing vehicles</span>
+      <button id="resetFilters" class="filter-reset" type="button">Reset Filters</button>
+    </div>
+    <div id="vehicleList" class="vehicle-grid"></div>
+    <nav id="vehiclePagination" class="pagination" aria-label="Vehicle list pages"></nav>
+  </main>
+
+  <section class="dark-section"><div class="container split"><div><h2>Interested in a vehicle?</h2><p>Click any vehicle to view a full details page, then enquire by email or phone.</p></div><a class="btn gold" href="contact.html">Contact KHG</a></div></section>
+
+  <footer><div class="container footer-grid"><div><h3>KHG Auto Workshops</h3><p>Used cars, trade-ins, finance enquiries and automotive services.</p></div><div><h3>Quick Links</h3><div class="footer-links"><a href="index.html">Home</a><a href="sell-your-car.html">Sell Your Car</a><a href="finance.html">Finance</a><a href="contact.html">Contact</a></div></div><div><h3>Contact</h3><p>68–70 Fairbank Road, Clayton South VIC 3169</p><p><a href="tel:0440139012">0440 139 012</a><br><a href="mailto:info@khgautoworkshops.com.au">info@khgautoworkshops.com.au</a></p></div></div><div class="container copyright">© KHG Auto Workshops. All rights reserved.</div></footer>
+  <script src="vehicles-data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

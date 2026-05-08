@@ -129,7 +129,7 @@ const vehicles = [
   {
     id: "2012 Mercedes-Benz M-Class ML63 AMG Auto",
     title: "2012 Mercedes-Benz M-Class ML63 AMG Auto",
-    price: 1=29888,
+    price: 29888,
     kms: "143,000 km",
     transmission: "Automatic",
     fuel: "Petrol",
@@ -179,8 +179,14 @@ const vehicles = [
   "assets/vehicles/Mercedes Benz M 2012 Wagon/car_34.png",
   "assets/vehicles/Mercedes Benz M 2012 Wagon/car_35.png"
 ],
-    description: "Dummy listing for 2012 Mercedes-Benz M-Class ML63 AMG Auto. Replace this text, photos, price and specifications with the real vehicle details before publishing.",
-    features: ["Reverse camera", "Bluetooth", "Cruise control", "Air conditioning", "Service history", "Alloy wheels"]
+    description: "2012 Mercedes-Benz M-Class ML63 AMG Auto 4x4 finished in Obsidian Black with black interior. Powered by a 5.5L twin-turbo V8 AMG engine producing 386kW and 700Nm, paired with a 7-speed SPEEDSHIFT automatic and 4MATIC all-wheel drive. Features include sunroof, leather interior with electric seats, satellite navigation, reverse camera, parking sensors, Bluetooth, premium sound system, keyless entry, push-button start, AMG alloy wheels and strong AMG performance luxury. Dealer listing shows 143,000km, roadworthy certificate included, registered and ready to drive away, with 12-month premium warranty available.",
+    carsalesUrl: "https://www.carsales.com.au/cars/details/mercedes-benz-m-class-2012/oag-ad-25759848/?_ga=2.17678523.308244152.1778121915-1659496573.1769044340",
+    externalListing: {
+      label: "Official Carsales Listing",
+      url: "https://www.carsales.com.au/cars/details/mercedes-benz-m-class-2012/oag-ad-25759848/?_ga=2.17678523.308244152.1778121915-1659496573.1769044340",
+      text: "This vehicle is also advertised online. Open the Carsales listing for the live advertisement details."
+    },
+    features: ["Reverse camera", "Bluetooth", "Cruise control", "Air conditioning", "Service history", "Sunroof","AEB (Full/VRU)","Traction and/or Stability Control"]
   },
   {
     id: "2020-kia-cerato-sport",

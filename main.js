@@ -1,7 +1,7 @@
 const BUSINESS = {
   email: "info@khgautoworkshops.com.au",
-  phone: "0440139012",
-  phoneDisplay: "0440 139 012",
+  phone: "0460505070",
+  phoneDisplay: "0460 505 070",
   address: "68–70 Fairbank Road, Clayton South VIC 3169"
 };
 
@@ -70,7 +70,7 @@ function vehicleCard(v) {
         <div class="card-actions">
           <a class="btn primary" href="vehicle-detail.html?id=${encodeURIComponent(v.id)}">View Details</a>
           ${carsalesButton}
-          <a class="btn secondary" href="mailto:${BUSINESS.email}?subject=${subject}&body=${body}">Enquire</a>
+          <a class="btn secondary" href="tel:${BUSINESS.phone}">Enquire</a>
         </div>
       </div>
     </article>`;

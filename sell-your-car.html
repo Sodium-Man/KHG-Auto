@@ -16,17 +16,23 @@
   <main class="container section split">
     <div>
       <h2>Fast vehicle appraisal enquiry</h2>
-      <p>Complete the form and the enquiry will be sent directly to KHG Auto Workshops. Your enquiry will be submitted from this page without redirecting you to FormSubmit.</p>
+      <p>Complete the form with your vehicle details and contact information, and our team will review your enquiry and get back to you as soon as possible.</p>
       <ul class="tick-list">
         <li>Cars, SUVs, utes and trade-in enquiries</li>
         <li>Useful for customers upgrading to another vehicle</li>
         <li>Includes optional vehicle photo upload fields</li>
         <li>Directs enquiry to info@khgautoworkshops.com.au</li>
       </ul>
-      <div class="info-card">
-        <h3>Photo placeholder</h3>
-        <p>This page is ready for your real vehicle photos and stock process. Customers can attach a few photos with their appraisal enquiry.</p>
-      </div>
+      <div class="info-card sell-tips-card">
+  <h3>What helps us value your car?</h3>
+  <p>For a faster and more accurate appraisal, please include clear photos of the front, rear, sides, interior, odometer and any visible damage.</p>
+  <ul class="tick-list compact">
+    <li>Exterior photos from all angles</li>
+    <li>Interior and dashboard photos</li>
+    <li>Odometer reading</li>
+    <li>Service history or condition notes</li>
+  </ul>
+</div>
     </div>
 
     <form class="lead-form" action="https://formsubmit.co/ajax/info@khgautoworkshops.com.au" method="POST" enctype="multipart/form-data">
@@ -47,9 +53,12 @@
         <label>Expected Price<input name="Expected Price" type="text" placeholder="$"></label>
       </div>
       <label>Vehicle Details<textarea name="Vehicle Details" placeholder="Condition, service history, registration, finance owing, damage, photos available..."></textarea></label>
-      <label>Vehicle Photos<input name="Vehicle Photos" type="file" accept="image/*" multiple><span class="upload-note">Optional: upload exterior, interior, odometer or damage photos.</span></label>
-      <p class="form-note">Submitting sends the enquiry directly to info@khgautoworkshops.com.au without leaving this page.</p>
-      <button type="submit">Submit Sell Enquiry</button>
+     <label>
+  Vehicle Photos
+  <input name="Vehicle Photos[]" type="file" accept="image/*" multiple>
+  <span class="upload-note">Optional: upload multiple photos including exterior, interior, odometer or damage photos.</span>
+</label>
+      <button class="sell-submit-btn" type="submit">Submit Sell Enquiry</button>
     </form>
   </main>
 

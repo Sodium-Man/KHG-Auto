@@ -52,7 +52,7 @@ function vehicleCard(v) {
   const subject = encodeURIComponent(`Vehicle enquiry: ${v.title}`);
   const body = encodeURIComponent(`Hi KHG Auto Workshops,\n\nI am interested in this vehicle:\n${v.title}\nPrice: ${formatPrice(v.price)}\nKilometres: ${v.kms}\n\nPlease contact me with more information.\n\nName:\nPhone:`);
   const carsalesUrl = getCarsalesUrl(v);
-  const carsalesButton = carsalesUrl ? `<a class="btn secondary" href="${carsalesUrl}" target="_blank" rel="noopener">Carsales</a>` : "";
+  const carsalesButton = carsalesUrl ? `<a class="btn carsales-card-btn" href="${carsalesUrl}" target="_blank" rel="noopener">Carsales</a>` : "";
   return `
     <article class="vehicle-card">
       <a href="vehicle-detail.html?id=${encodeURIComponent(v.id)}" aria-label="View details for ${v.title}">
@@ -70,7 +70,7 @@ function vehicleCard(v) {
         <div class="card-actions">
           <a class="btn primary" href="vehicle-detail.html?id=${encodeURIComponent(v.id)}">View Details</a>
           ${carsalesButton}
-          <a class="btn secondary" href="tel:${BUSINESS.phone}">Enquire</a>
+          <a class="btn enquire-card-btn" href="tel:${BUSINESS.phone}">Enquire</a>
         </div>
       </div>
     </article>`;

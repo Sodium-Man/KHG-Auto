@@ -3,7 +3,7 @@
 Official website for **KHG Auto Workshops**, a Clayton South based automotive business offering used cars, vehicle enquiries, sell/trade-in enquiries, finance enquiries, and workshop services.
 
 Live website:  
-https://khgauto.vercel.app/
+https://khgauto.vercel.app
 
 ---
 

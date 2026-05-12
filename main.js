@@ -359,7 +359,7 @@ function setupVehicleDetail() {
           <div class="card-actions detail-actions">
             <a class="btn primary" href="mailto:${BUSINESS.email}?subject=${subject}&body=${body}">Enquire Now</a>
             <a class="btn gold" href="tel:${BUSINESS.phone}">Call ${BUSINESS.phoneDisplay}</a>
-            <a class="btn secondary" href="finance.html">Finance Enquiry</a>
+            <a class="btn finance-detail-btn" href="finance.html">Finance Enquiry</a>
           </div>
         </div>
         ${externalListing}

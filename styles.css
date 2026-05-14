@@ -956,3 +956,63 @@ footer h3 { margin: 0 0 14px; }
     grid-column: auto;
   }
 }
+
+/* Strong automotive-style brand title beside logo */
+.brand-signature {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  line-height: 1;
+}
+
+.brand-signature strong {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  margin: 0;
+  line-height: 1;
+}
+
+.brand-khg,
+.brand-auto {
+  font-family: "Russo One", Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.brand-khg {
+  font-size: 32px;
+  color: #0b0f19;
+  position: relative;
+}
+
+.brand-khg::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0b0f19, #f2b705);
+}
+
+.brand-auto {
+  font-size: 30px;
+  color: #9a7200;
+  margin-left: 1px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .brand-khg {
+    font-size: 27px;
+  }
+
+  .brand-auto {
+    font-size: 25px;
+  }
+}

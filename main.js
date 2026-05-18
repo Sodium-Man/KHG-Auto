@@ -141,9 +141,23 @@ function setupMobileMenu() {
 }
 
 function setupActiveNav() {
-  const file = location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll("nav a").forEach(link => {
-    if (link.getAttribute("href") === file) link.classList.add("active");
+  const currentPath = location.pathname
+    .replace(/^\/+|\/+$/g, "")
+    .replace(".html", "");
+
+  const currentPage = currentPath || "index";
+
+  document.querySelectorAll(".topbar nav a").forEach(link => {
+    const linkPath = link
+      .getAttribute("href")
+      .replace(/^\/+|\/+$/g, "")
+      .replace(".html", "");
+
+    const linkPage = linkPath || "index";
+
+    if (linkPage === currentPage) {
+      link.classList.add("active");
+    }
   });
 }
 

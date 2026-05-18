@@ -17,31 +17,76 @@ function getVehicleImages(v) {
 
 function vehicleImage(v) {
   const images = getVehicleImages(v);
-  if (images.length) return `<div class="vehicle-image"><img src="${images[0]}" alt="${v.title}"></div>`;
+
+  if (images.length) {
+    return `
+      <div class="vehicle-image">
+        <img src="${images[0]}" alt="${v.title}">
+      </div>
+    `;
+  }
+
   return `<div class="vehicle-image">${v.imageLabel || v.title}</div>`;
 }
 
 function vehicleGallery(v) {
   const images = getVehicleImages(v);
+
   if (!images.length) return vehicleImage(v);
 
-  const sliderControls = images.length > 1 ? `
-        <button class="gallery-nav gallery-prev" type="button" aria-label="Previous vehicle image">‹</button>
-        <button class="gallery-nav gallery-next" type="button" aria-label="Next vehicle image">›</button>` : "";
+  const sliderControls = images.length > 1
+    ? `
+      <button
+        class="gallery-nav gallery-prev"
+        type="button"
+        aria-label="Previous vehicle image"
+      >
+        ‹
+      </button>
 
-  const thumbnails = images.map((src, index) => `
-    <button class="gallery-thumb ${index === 0 ? "active" : ""}" type="button" data-gallery-index="${index}" data-gallery-image="${src}" aria-label="View image ${index + 1} of ${v.title}">
-      <img src="${src}" alt="${v.title} image ${index + 1}">
-    </button>`).join("");
+      <button
+        class="gallery-nav gallery-next"
+        type="button"
+        aria-label="Next vehicle image"
+      >
+        ›
+      </button>
+    `
+    : "";
+
+  const thumbnails = images
+    .map(
+      (src, index) => `
+        <button
+          class="gallery-thumb ${index === 0 ? "active" : ""}"
+          type="button"
+          data-gallery-index="${index}"
+          data-gallery-image="${src}"
+          aria-label="View image ${index + 1} of ${v.title}"
+        >
+          <img src="${src}" alt="${v.title} image ${index + 1}">
+        </button>
+      `
+    )
+    .join("");
 
   return `
     <div class="vehicle-gallery" data-gallery-count="${images.length}">
       <div class="gallery-main vehicle-image">
-        <img src="${images[0]}" alt="${v.title}" id="mainVehicleImage" data-gallery-index="0">
+        <img
+          src="${images[0]}"
+          alt="${v.title}"
+          id="mainVehicleImage"
+          data-gallery-index="0"
+        >
         ${sliderControls}
       </div>
-      <aside class="gallery-sidebar" aria-label="Vehicle image gallery">${thumbnails}</aside>
-    </div>`;
+
+      <aside class="gallery-sidebar" aria-label="Vehicle image gallery">
+        ${thumbnails}
+      </aside>
+    </div>
+  `;
 }
 
 function getCarsalesUrl(v) {
@@ -50,37 +95,67 @@ function getCarsalesUrl(v) {
 
 function vehicleCard(v) {
   const subject = encodeURIComponent(`Vehicle enquiry: ${v.title}`);
-  const body = encodeURIComponent(`Hi KHG Auto Workshops,\n\nI am interested in this vehicle:\n${v.title}\nPrice: ${formatPrice(v.price)}\nKilometres: ${v.kms}\n\nPlease contact me with more information.\n\nName:\nPhone:`);
+
+  const body = encodeURIComponent(
+    `Hi KHG Auto Workshops,\n\nI am interested in this vehicle:\n${v.title}\nPrice: ${formatPrice(v.price)}\nKilometres: ${v.kms}\n\nPlease contact me with more information.\n\nName:\nPhone:`
+  );
+
   const carsalesUrl = getCarsalesUrl(v);
-  const carsalesButton = carsalesUrl ? `<a class="btn carsales-card-btn" href="${carsalesUrl}" target="_blank" rel="noopener">Carsales</a>` : "";
+
+  const carsalesButton = carsalesUrl
+    ? `<a class="btn carsales-card-btn" href="${carsalesUrl}" target="_blank" rel="noopener">Carsales</a>`
+    : "";
+
   return `
     <article class="vehicle-card">
-      <a href="vehicle-detail.html?id=${encodeURIComponent(v.id)}" aria-label="View details for ${v.title}">
+      <a
+        href="vehicle-detail.html?id=${encodeURIComponent(v.id)}"
+        aria-label="View details for ${v.title}"
+      >
         ${vehicleImage(v)}
       </a>
+
       <div class="vehicle-info">
-        <h3><a href="vehicle-detail.html?id=${encodeURIComponent(v.id)}">${v.title}</a></h3>
+        <h3>
+          <a href="vehicle-detail.html?id=${encodeURIComponent(v.id)}">
+            ${v.title}
+          </a>
+        </h3>
+
         <div class="price">${formatPrice(v.price)}</div>
+
         <div class="meta">
           <span>${v.kms}</span>
           <span>${v.transmission}</span>
           <span>${v.fuel}</span>
           <span>${v.warranty}</span>
         </div>
+
         <div class="card-actions">
-          <a class="btn primary" href="vehicle-detail.html?id=${encodeURIComponent(v.id)}">View Details</a>
+          <a
+            class="btn primary"
+            href="vehicle-detail.html?id=${encodeURIComponent(v.id)}"
+          >
+            View Details
+          </a>
+
           ${carsalesButton}
-          <a class="btn enquire-card-btn" href="tel:${BUSINESS.phone}">Enquire</a>
+
+          <a class="btn enquire-card-btn" href="tel:${BUSINESS.phone}">
+            Enquire
+          </a>
         </div>
       </div>
-    </article>`;
+    </article>
+  `;
 }
-
 
 function setupAjaxForms() {
   document.querySelectorAll("form.lead-form").forEach(form => {
     const button = form.querySelector('button[type="submit"]');
+
     let status = form.querySelector(".form-status");
+
     if (!status) {
       status = document.createElement("p");
       status.className = "form-status";
@@ -90,11 +165,14 @@ function setupAjaxForms() {
 
     form.addEventListener("submit", async event => {
       event.preventDefault();
+
       const originalText = button ? button.textContent : "";
+
       if (button) {
         button.disabled = true;
         button.textContent = "Sending...";
       }
+
       status.textContent = "Sending your enquiry...";
       status.className = "form-status";
 
@@ -102,16 +180,20 @@ function setupAjaxForms() {
         const response = await fetch(form.action, {
           method: "POST",
           body: new FormData(form),
-          headers: { "Accept": "application/json" }
+          headers: {
+            Accept: "application/json"
+          }
         });
 
         if (!response.ok) throw new Error("Form submission failed");
 
         form.reset();
-        status.textContent = "Thank you. Your enquiry has been sent to KHG Auto Workshops.";
+        status.textContent =
+          "Thank you. Your enquiry has been sent to KHG Auto Workshops.";
         status.className = "form-status success";
       } catch (error) {
-        status.textContent = "Sorry, the enquiry could not be sent. Please call 0440 139 012 or email info@khgautoworkshops.com.au.";
+        status.textContent =
+          "Sorry, the enquiry could not be sent. Please call 0440 139 012 or email info@khgautoworkshops.com.au.";
         status.className = "form-status error";
       } finally {
         if (button) {
@@ -126,12 +208,16 @@ function setupAjaxForms() {
 function setupMobileMenu() {
   const button = document.querySelector(".menu-btn");
   const nav = document.querySelector("header nav");
+
   if (!button || !nav) return;
+
   button.setAttribute("aria-expanded", "false");
+
   button.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("open");
     button.setAttribute("aria-expanded", String(isOpen));
   });
+
   nav.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       nav.classList.remove("open");
@@ -161,10 +247,26 @@ function setupActiveNav() {
   });
 }
 
+function setupMobileVehicleFilters() {
+  const toggleButton = document.getElementById("mobileFilterToggle");
+  const filtersPanel = document.getElementById("vehicleFiltersPanel");
+
+  if (!toggleButton || !filtersPanel) return;
+
+  toggleButton.addEventListener("click", () => {
+    const isOpen = filtersPanel.classList.toggle("open");
+    toggleButton.setAttribute("aria-expanded", String(isOpen));
+  });
+}
+
 function setupVehicleLists() {
   if (typeof vehicles === "undefined") return;
+
   const featured = document.getElementById("featuredVehicles");
-  if (featured) featured.innerHTML = vehicles.slice(0, 3).map(vehicleCard).join("");
+
+  if (featured) {
+    featured.innerHTML = vehicles.slice(0, 3).map(vehicleCard).join("");
+  }
 
   const list = document.getElementById("vehicleList");
   const pagination = document.getElementById("vehiclePagination");
@@ -176,27 +278,36 @@ function setupVehicleLists() {
   const fuelFilter = document.getElementById("fuelFilter");
   const sortFilter = document.getElementById("sortFilter");
   const resetFilters = document.getElementById("resetFilters");
+
   if (!list) return;
 
   const perPage = 6;
-  let currentPage = Math.max(1, Number(new URLSearchParams(location.search).get("page")) || 1);
+
+  let currentPage =
+    Math.max(1, Number(new URLSearchParams(location.search).get("page"))) || 1;
 
   const addOptions = (select, values) => {
     if (!select) return;
-    [...new Set(values.filter(Boolean))].sort().forEach(value => {
-      const option = document.createElement("option");
-      option.value = value;
-      option.textContent = value;
-      select.appendChild(option);
-    });
+
+    [...new Set(values.filter(Boolean))]
+      .sort()
+      .forEach(value => {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = value;
+        select.appendChild(option);
+      });
   };
 
   addOptions(bodyFilter, vehicles.map(v => v.body));
   addOptions(transmissionFilter, vehicles.map(v => v.transmission));
   addOptions(fuelFilter, vehicles.map(v => v.fuel));
 
-  const getKmNumber = v => Number(String(v.kms).replace(/[^0-9]/g, "")) || 0;
-  const getYearNumber = v => Number(String(v.title).match(/\b(19|20)\d{2}\b/)?.[0]) || 0;
+  const getKmNumber = v =>
+    Number(String(v.kms).replace(/[^0-9]/g, "")) || 0;
+
+  const getYearNumber = v =>
+    Number(String(v.title).match(/\b(19|20)\d{2}\b/)?.[0]) || 0;
 
   function getFilteredVehicles() {
     const search = (searchInput?.value || "").toLowerCase();
@@ -207,12 +318,16 @@ function setupVehicleLists() {
     const sort = sortFilter?.value || "featured";
 
     const filtered = vehicles.filter(v => {
-      const text = `${v.title} ${v.kms} ${v.transmission} ${v.fuel} ${v.body} ${v.colour} ${v.engine} ${v.stockNo}`.toLowerCase();
-      return text.includes(search)
-        && (maxPrice === "all" || v.price <= Number(maxPrice))
-        && (body === "all" || v.body === body)
-        && (transmission === "all" || v.transmission === transmission)
-        && (fuel === "all" || v.fuel === fuel);
+      const text =
+        `${v.title} ${v.kms} ${v.transmission} ${v.fuel} ${v.body} ${v.colour} ${v.engine} ${v.stockNo}`.toLowerCase();
+
+      return (
+        text.includes(search) &&
+        (maxPrice === "all" || v.price <= Number(maxPrice)) &&
+        (body === "all" || v.body === body) &&
+        (transmission === "all" || v.transmission === transmission) &&
+        (fuel === "all" || v.fuel === fuel)
+      );
     });
 
     return filtered.sort((a, b) => {
@@ -227,139 +342,272 @@ function setupVehicleLists() {
 
   function setPage(page, updateUrl = true) {
     currentPage = page;
+
     if (updateUrl) {
       const url = new URL(location.href);
-      if (currentPage > 1) url.searchParams.set("page", currentPage);
-      else url.searchParams.delete("page");
+
+      if (currentPage > 1) {
+        url.searchParams.set("page", currentPage);
+      } else {
+        url.searchParams.delete("page");
+      }
+
       history.pushState({}, "", url);
     }
+
     renderVehicles(false);
     list.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function renderPagination(totalPages) {
     if (!pagination) return;
+
     if (totalPages <= 1) {
       pagination.innerHTML = "";
       return;
     }
 
     const buttons = [];
-    buttons.push(`<button type="button" ${currentPage === 1 ? "disabled" : ""} data-page="${currentPage - 1}">Previous</button>`);
+
+    buttons.push(`
+      <button
+        type="button"
+        ${currentPage === 1 ? "disabled" : ""}
+        data-page="${currentPage - 1}"
+      >
+        Previous
+      </button>
+    `);
+
     for (let page = 1; page <= totalPages; page++) {
-      buttons.push(`<button type="button" class="${page === currentPage ? "active" : ""}" aria-current="${page === currentPage ? "page" : "false"}" data-page="${page}">${page}</button>`);
+      buttons.push(`
+        <button
+          type="button"
+          class="${page === currentPage ? "active" : ""}"
+          aria-current="${page === currentPage ? "page" : "false"}"
+          data-page="${page}"
+        >
+          ${page}
+        </button>
+      `);
     }
-    buttons.push(`<button type="button" ${currentPage === totalPages ? "disabled" : ""} data-page="${currentPage + 1}">Next</button>`);
+
+    buttons.push(`
+      <button
+        type="button"
+        ${currentPage === totalPages ? "disabled" : ""}
+        data-page="${currentPage + 1}"
+      >
+        Next
+      </button>
+    `);
+
     pagination.innerHTML = buttons.join("");
 
     pagination.querySelectorAll("button[data-page]").forEach(button => {
-      button.addEventListener("click", () => setPage(Number(button.dataset.page)));
+      button.addEventListener("click", () => {
+        setPage(Number(button.dataset.page));
+      });
     });
   }
 
   function renderVehicles(resetPage = false) {
     const filtered = getFilteredVehicles();
     const totalPages = Math.max(1, Math.ceil(filtered.length / perPage));
+
     if (resetPage) currentPage = 1;
     if (currentPage > totalPages) currentPage = totalPages;
 
     const start = (currentPage - 1) * perPage;
     const shown = filtered.slice(start, start + perPage);
-    list.innerHTML = shown.map(vehicleCard).join("") || "<p>No vehicles found. Please call us for current stock.</p>";
+
+    list.innerHTML =
+      shown.map(vehicleCard).join("") ||
+      "<p>No vehicles found. Please call us for current stock.</p>";
 
     if (count) {
-      if (filtered.length === 0) count.textContent = "No vehicles found";
-      else count.textContent = `Showing ${start + 1}-${start + shown.length} of ${filtered.length} vehicles`;
+      if (filtered.length === 0) {
+        count.textContent = "No vehicles found";
+      } else {
+        count.textContent = `Showing ${start + 1}-${start + shown.length} of ${filtered.length} vehicles`;
+      }
     }
+
     renderPagination(totalPages);
   }
 
   renderVehicles();
-  [searchInput, priceFilter, bodyFilter, transmissionFilter, fuelFilter, sortFilter].forEach(control => {
+
+  [
+    searchInput,
+    priceFilter,
+    bodyFilter,
+    transmissionFilter,
+    fuelFilter,
+    sortFilter
+  ].forEach(control => {
     control?.addEventListener("input", () => renderVehicles(true));
     control?.addEventListener("change", () => renderVehicles(true));
   });
+
   resetFilters?.addEventListener("click", () => {
     if (searchInput) searchInput.value = "";
-    [priceFilter, bodyFilter, transmissionFilter, fuelFilter].forEach(control => { if (control) control.value = "all"; });
+
+    [priceFilter, bodyFilter, transmissionFilter, fuelFilter].forEach(control => {
+      if (control) control.value = "all";
+    });
+
     if (sortFilter) sortFilter.value = "featured";
+
     renderVehicles(true);
   });
+
   window.addEventListener("popstate", () => {
-    currentPage = Math.max(1, Number(new URLSearchParams(location.search).get("page")) || 1);
+    currentPage =
+      Math.max(1, Number(new URLSearchParams(location.search).get("page"))) || 1;
+
     renderVehicles(false);
   });
 }
 
 function renderCarousel(trackId, items, template) {
   const track = document.getElementById(trackId);
+
   if (!track || !items) return;
+
   track.innerHTML = items.map(template).join("");
 }
 
 function setupCarousels() {
   if (typeof services !== "undefined") {
-    renderCarousel("servicesTrack", services, item => `
-      <article class="service-card carousel-card">
-        <div class="icon">✓</div>
-        <h3>${item.title}</h3>
-        <p>${item.text}</p>
-      </article>`);
+    renderCarousel(
+      "servicesTrack",
+      services,
+      item => `
+        <article class="service-card carousel-card">
+          <div class="icon">✓</div>
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        </article>
+      `
+    );
   }
+
   if (typeof reviews !== "undefined") {
-    renderCarousel("reviewsTrack", reviews, item => `
-      <article class="review-card carousel-card">
-        <div class="stars">★★★★★</div>
-        <h3>${item.title}</h3>
-        <p>“${item.text}”</p>
-        <strong>${item.name}</strong>
-      </article>`);
+    renderCarousel(
+      "reviewsTrack",
+      reviews,
+      item => `
+        <article class="review-card carousel-card">
+          <div class="stars">★★★★★</div>
+          <h3>${item.title}</h3>
+          <p>“${item.text}”</p>
+          <strong>${item.name}</strong>
+        </article>
+      `
+    );
   }
+
   document.querySelectorAll("[data-slider]").forEach(slider => {
     const track = slider.querySelector(".carousel-track");
+
     if (!track) return;
-    const move = dir => track.scrollBy({ left: dir * Math.min(track.clientWidth, 420), behavior: "smooth" });
-    slider.querySelectorAll("[data-prev]").forEach(btn => btn.addEventListener("click", () => move(-1)));
-    slider.querySelectorAll("[data-next]").forEach(btn => btn.addEventListener("click", () => move(1)));
+
+    const move = dir =>
+      track.scrollBy({
+        left: dir * Math.min(track.clientWidth, 420),
+        behavior: "smooth"
+      });
+
+    slider.querySelectorAll("[data-prev]").forEach(btn => {
+      btn.addEventListener("click", () => move(-1));
+    });
+
+    slider.querySelectorAll("[data-next]").forEach(btn => {
+      btn.addEventListener("click", () => move(1));
+    });
 
     const head = slider.previousElementSibling;
-    head?.querySelectorAll("[data-prev]").forEach(btn => btn.addEventListener("click", () => move(-1)));
-    head?.querySelectorAll("[data-next]").forEach(btn => btn.addEventListener("click", () => move(1)));
+
+    head?.querySelectorAll("[data-prev]").forEach(btn => {
+      btn.addEventListener("click", () => move(-1));
+    });
+
+    head?.querySelectorAll("[data-next]").forEach(btn => {
+      btn.addEventListener("click", () => move(1));
+    });
   });
 }
 
 function setupVehicleDetail() {
   const root = document.getElementById("vehicleDetail");
+
   if (!root || typeof vehicles === "undefined") return;
+
   const id = new URLSearchParams(location.search).get("id") || vehicles[0].id;
   const v = vehicles.find(item => item.id === id) || vehicles[0];
+
   document.title = `${v.title} For Sale | KHG Auto Workshops`;
+
   const subject = encodeURIComponent(`Vehicle enquiry: ${v.title}`);
-  const body = encodeURIComponent(`Hi KHG Auto Workshops,\n\nI am interested in ${v.title}.\nStock No: ${v.stockNo}\nPrice: ${formatPrice(v.price)}\nKilometres: ${v.kms}\n\nPlease contact me.\n\nName:\nPhone:`);
+
+  const body = encodeURIComponent(
+    `Hi KHG Auto Workshops,\n\nI am interested in ${v.title}.\nStock No: ${v.stockNo}\nPrice: ${formatPrice(v.price)}\nKilometres: ${v.kms}\n\nPlease contact me.\n\nName:\nPhone:`
+  );
+
   const carsalesUrl = getCarsalesUrl(v);
-  const externalListing = carsalesUrl ? `
-        <div class="detail-card">
-          <span class="eyebrow">${v.externalListing?.label || "Official Carsales Listing"}</span>
-          <h3>Also listed on Carsales</h3>
-          <p>${v.externalListing?.text || "Open the Carsales listing for the live advertisement details."}</p>
-          <a class="btn primary" href="${carsalesUrl}" target="_blank" rel="noopener">View Carsales Listing</a>
-        </div>` : "";
+
+  const externalListing = carsalesUrl
+    ? `
+      <div class="detail-card">
+        <span class="eyebrow">
+          ${v.externalListing?.label || "Official Carsales Listing"}
+        </span>
+
+        <h3>Also listed on Carsales</h3>
+
+        <p>
+          ${v.externalListing?.text || "Open the Carsales listing for the live advertisement details."}
+        </p>
+
+        <a
+          class="btn primary"
+          href="${carsalesUrl}"
+          target="_blank"
+          rel="noopener"
+        >
+          View Carsales Listing
+        </a>
+      </div>
+    `
+    : "";
+
   root.innerHTML = `
     <div class="detail-layout">
       <section class="detail-main">
         ${vehicleGallery(v)}
+
         <div class="detail-card">
           <h2>Vehicle Overview</h2>
           <p>${v.description}</p>
+
           <h3>Features</h3>
-          <div class="feature-tags">${v.features.map(f => `<span>${f}</span>`).join("")}</div>
+          <div class="feature-tags">
+            ${v.features.map(f => `<span>${f}</span>`).join("")}
+          </div>
         </div>
       </section>
+
       <aside class="detail-sidebar">
         <div class="detail-card sticky-card">
           <span class="eyebrow">${v.stockNo}</span>
+
           <h1>${v.title}</h1>
-          <div class="price detail-price">${formatPrice(v.price)}</div>
+
+          <div class="price detail-price">
+            ${formatPrice(v.price)}
+          </div>
+
           <div class="spec-list">
             <div><strong>Kilometres</strong><span>${v.kms}</span></div>
             <div><strong>Transmission</strong><span>${v.transmission}</span></div>
@@ -370,46 +618,77 @@ function setupVehicleDetail() {
             <div><strong>Rego</strong><span>${v.rego}</span></div>
             <div><strong>VIN</strong><span>${v.vin}</span></div>
           </div>
+
           <div class="card-actions detail-actions">
-            <a class="btn primary" href="mailto:${BUSINESS.email}?subject=${subject}&body=${body}">Enquire Now</a>
-            <a class="btn gold" href="tel:${BUSINESS.phone}">Call ${BUSINESS.phoneDisplay}</a>
-            <a class="btn finance-detail-btn" href="finance.html">Finance Enquiry</a>
+            <a
+              class="btn primary"
+              href="mailto:${BUSINESS.email}?subject=${subject}&body=${body}"
+            >
+              Enquire Now
+            </a>
+
+            <a class="btn gold" href="tel:${BUSINESS.phone}">
+              Call ${BUSINESS.phoneDisplay}
+            </a>
+
+            <a class="btn finance-detail-btn" href="finance.html">
+              Finance Enquiry
+            </a>
           </div>
         </div>
+
         ${externalListing}
       </aside>
-    </div>`;
+    </div>
+  `;
 
   const mainImage = root.querySelector("#mainVehicleImage");
   const galleryButtons = Array.from(root.querySelectorAll(".gallery-thumb"));
+
   let activeGalleryIndex = 0;
 
   function showGalleryImage(index) {
     if (!mainImage || !galleryButtons.length) return;
+
     const totalImages = galleryButtons.length;
     activeGalleryIndex = (index + totalImages) % totalImages;
+
     const activeButton = galleryButtons[activeGalleryIndex];
     const nextImage = activeButton?.dataset.galleryImage;
+
     if (!nextImage) return;
+
     mainImage.src = nextImage;
     mainImage.alt = `${v.title} image ${activeGalleryIndex + 1}`;
     mainImage.dataset.galleryIndex = String(activeGalleryIndex);
+
     galleryButtons.forEach(item => item.classList.remove("active"));
     activeButton.classList.add("active");
-    activeButton.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+
+    activeButton.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center"
+    });
   }
 
   galleryButtons.forEach((button, index) => {
     button.addEventListener("click", () => showGalleryImage(index));
   });
 
-  root.querySelector(".gallery-prev")?.addEventListener("click", () => showGalleryImage(activeGalleryIndex - 1));
-  root.querySelector(".gallery-next")?.addEventListener("click", () => showGalleryImage(activeGalleryIndex + 1));
+  root
+    .querySelector(".gallery-prev")
+    ?.addEventListener("click", () => showGalleryImage(activeGalleryIndex - 1));
+
+  root
+    .querySelector(".gallery-next")
+    ?.addEventListener("click", () => showGalleryImage(activeGalleryIndex + 1));
 }
 
 setupMobileMenu();
 setupActiveNav();
 setupVehicleLists();
+setupMobileVehicleFilters();
 setupCarousels();
 setupVehicleDetail();
 setupAjaxForms();

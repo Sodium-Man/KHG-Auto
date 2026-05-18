@@ -3,117 +3,215 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Used Vehicles For Sale Clayton South | KHG Auto</title>
-  <meta name="description" content="Browse KHG Auto used vehicles in Clayton South. Search current stock and enquire by email or phone for inspections, finance and trade-in options." />
-  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <meta
+    name="description"
+    content="Browse KHG Auto used vehicles in Clayton South. Search current stock and enquire by email or phone for inspections, finance and trade-in options."
+  />
+
+  <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="stylesheet" href="styles.css" />
- <link
+  <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Russo+One&display=swap"
     rel="stylesheet"
   />
 </head>
+
 <body>
-  <div class="top-strip"><div class="container"><span>Used vehicle enquiries in Clayton South</span><span><a href="tel:0440139012">0440 139 012</a> · <a href="mailto:info@khgautoworkshops.com.au">info@khgautoworkshops.com.au</a></span></div></div>
-  <header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/logo.png" alt="KHG Auto logo"><span class="brand-copy">
-  <strong><span class="brand-khg">KHG</span>
-            <span class="brand-auto">AUTO</span></strong>
-</span></a><nav><a href="index.html">Home</a><a href="vehicles.html">Vehicles</a><a href="sell-your-car.html">Sell Your Car</a><a href="finance.html">Finance</a><a href="warranty.html">Warranty</a><a href="contact.html">Contact</a></nav><div class="nav-actions"><a class="btn call-btn" href="tel:0440139012">Call Now</a><button class="btn menu-btn" type="button">Menu</button></div></div></header>
+  <div class="top-strip">
+    <div class="container">
+      <span>Used vehicle enquiries in Clayton South</span>
 
-  <section class="page-title">
-  <div class="container">
-    <span class="eyebrow">Vehicles</span>
-    <h1>Vehicles for sale</h1>
-    <p>Browse our current range of quality used cars available at KHG Auto. Find your next vehicle, view full details, check photos and contact our team to arrange an inspection or test drive.</p>
+      <span>
+        <a href="tel:0440139012">0440 139 012</a>
+        ·
+        <a href="mailto:info@khgautoworkshops.com.au">
+          info@khgautoworkshops.com.au
+        </a>
+      </span>
+    </div>
   </div>
-</section>
 
-  <main class="container section">
-    <div class="filters">
-      <input id="searchInput" type="text" placeholder="Search make, model, year, fuel or transmission..." aria-label="Search vehicles" />
-      <select id="priceFilter" aria-label="Filter by price">
-        <option value="all">All prices</option>
-        <option value="15000">Under $15,000</option>
-        <option value="25000">Under $25,000</option>
-        <option value="50000">Under $50,000</option>
-      </select>
-      <select id="bodyFilter" aria-label="Filter by body type">
-        <option value="all">All body types</option>
-      </select>
-      <select id="transmissionFilter" aria-label="Filter by transmission">
-        <option value="all">All transmissions</option>
-      </select>
-      <select id="fuelFilter" aria-label="Filter by fuel type">
-        <option value="all">All fuel types</option>
-      </select>
-      <select id="sortFilter" aria-label="Sort vehicles">
-        <option value="featured">Sort: Featured</option>
-        <option value="price-low">Price: Low to High</option>
-        <option value="price-high">Price: High to Low</option>
-        <option value="year-new">Year: Newest First</option>
-        <option value="year-old">Year: Oldest First</option>
-        <option value="km-low">Kilometres: Low to High</option>
-      </select>
-    </div>
-    <div class="vehicle-results-bar">
-      <span id="vehicleCount">Showing vehicles</span>
-      <button id="resetFilters" class="filter-reset" type="button">Reset Filters</button>
-    </div>
-    <div id="vehicleList" class="vehicle-grid"></div>
-    <nav id="vehiclePagination" class="pagination" aria-label="Vehicle list pages"></nav>
-  </main>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="KHG Auto logo" />
 
-  <footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-     <h3>KHG Auto Carsales</h3>
-<p>
-  Quality used vehicle enquiries, trade-ins, finance enquiries and warranty
-  information in Clayton South, Melbourne.
-</p>
-    </div>
+        <span class="brand-copy">
+          <strong>
+            <span class="brand-khg">KHG</span>
+            <span class="brand-auto">AUTO</span>
+          </strong>
+        </span>
+      </a>
 
-    <div>
-      <h3>Quick Links</h3>
-      <div class="footer-links">
+      <nav>
+        <a href="index.html">Home</a>
         <a href="vehicles.html">Vehicles</a>
         <a href="sell-your-car.html">Sell Your Car</a>
         <a href="finance.html">Finance</a>
         <a href="warranty.html">Warranty</a>
         <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn call-btn" href="tel:0440139012">Call Now</a>
+        <button class="btn menu-btn" type="button">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-title">
+    <div class="container">
+      <span class="eyebrow">Vehicles</span>
+
+      <h1>Vehicles for sale</h1>
+
+      <p>
+        Browse our current range of quality used cars available at KHG Auto.
+        Find your next vehicle, view full details, check photos and contact our
+        team to arrange an inspection or test drive.
+      </p>
+    </div>
+  </section>
+
+  <main class="container section">
+    <div class="mobile-filter-heading">
+      <button
+        id="mobileFilterToggle"
+        class="mobile-filter-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="vehicleFiltersPanel"
+      >
+        <span class="filter-toggle-left">
+          <span class="filter-toggle-icon">☰</span>
+          <span>Filters & Sort</span>
+        </span>
+
+        <span class="filter-toggle-arrow">⌄</span>
+      </button>
+    </div>
+
+    <div id="vehicleFiltersPanel" class="vehicle-filters-panel">
+      <div class="filters">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search make, model, year, fuel or transmission..."
+          aria-label="Search vehicles"
+        />
+
+        <select id="priceFilter" aria-label="Filter by price">
+          <option value="all">All prices</option>
+          <option value="15000">Under $15,000</option>
+          <option value="25000">Under $25,000</option>
+          <option value="50000">Under $50,000</option>
+        </select>
+
+        <select id="bodyFilter" aria-label="Filter by body type">
+          <option value="all">All body types</option>
+        </select>
+
+        <select id="transmissionFilter" aria-label="Filter by transmission">
+          <option value="all">All transmissions</option>
+        </select>
+
+        <select id="fuelFilter" aria-label="Filter by fuel type">
+          <option value="all">All fuel types</option>
+        </select>
+
+        <select id="sortFilter" aria-label="Sort vehicles">
+          <option value="featured">Sort: Featured</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="year-new">Year: Newest First</option>
+          <option value="year-old">Year: Oldest First</option>
+          <option value="km-low">Kilometres: Low to High</option>
+        </select>
+      </div>
+
+      <button
+        id="resetFilters"
+        class="filter-reset filter-reset-panel"
+        type="button"
+      >
+        Reset Filters
+      </button>
+    </div>
+
+    <div class="vehicle-results-bar">
+      <span id="vehicleCount">Showing vehicles</span>
+    </div>
+
+    <div id="vehicleList" class="vehicle-grid"></div>
+
+    <nav
+      id="vehiclePagination"
+      class="pagination"
+      aria-label="Vehicle list pages"
+    ></nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>KHG Auto Carsales</h3>
+
+        <p>
+          Quality used vehicle enquiries, trade-ins, finance enquiries and
+          warranty information in Clayton South, Melbourne.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+
+        <div class="footer-links">
+          <a href="vehicles.html">Vehicles</a>
+          <a href="sell-your-car.html">Sell Your Car</a>
+          <a href="finance.html">Finance</a>
+          <a href="warranty.html">Warranty</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+
+        <div class="footer-contact">
+          <p>
+            <span class="footer-icon">📍</span>
+            <span>68–70 Fairbank Road, Clayton South VIC 3169</span>
+          </p>
+
+          <p>
+            <span class="footer-icon">📞</span>
+            <a href="tel:0440139012">0440 139 012</a>
+          </p>
+
+          <p>
+            <span class="footer-icon">✉️</span>
+            <a href="mailto:info@khgautoworkshops.com.au">
+              info@khgautoworkshops.com.au
+            </a>
+          </p>
+
+          <p>
+            <span class="footer-icon">🕒</span>
+            <span>Mon–Fri: 8:00 AM – 5:30 PM</span>
+          </p>
+        </div>
       </div>
     </div>
 
-    <div>
-      <h3>Contact</h3>
-
-      <div class="footer-contact">
-        <p>
-          <span class="footer-icon">📍</span>
-          <span>68–70 Fairbank Road, Clayton South VIC 3169</span>
-        </p>
-
-        <p>
-          <span class="footer-icon">📞</span>
-          <a href="tel:0440139012">0440 139 012</a>
-        </p>
-
-        <p>
-          <span class="footer-icon">✉️</span>
-          <a href="mailto:info@khgautoworkshops.com.au">info@khgautoworkshops.com.au</a>
-        </p>
-
-        <p>
-          <span class="footer-icon">🕒</span>
-          <span>Mon–Fri: 8:00 AM – 5:30 PM</span>
-        </p>
-      </div>
+    <div class="container copyright">
+      © KHG Auto Carsales. All rights reserved.
     </div>
-  </div>
+  </footer>
 
-  <div class="container copyright">
-   © KHG Auto Carsales. All rights reserved.
-  </div>
-</footer>
   <script src="vehicles-data.js"></script>
   <script src="main.js"></script>
 </body>

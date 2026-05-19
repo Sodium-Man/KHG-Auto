@@ -2442,3 +2442,79 @@ h3 {
   font-weight: 900;
   line-height: 1.45;
 }
+
+/* =========================================================
+   VEHICLE DETAIL FOOTER SPACING FIX
+   Makes the detail-page footer match the rest of the site
+   ========================================================= */
+
+.vehicle-detail-footer .vehicle-footer-cta-wrap {
+  padding-top: 46px;
+  padding-bottom: 48px;
+}
+
+.vehicle-detail-footer .footer-grid {
+  padding-top: 0;
+}
+
+.vehicle-detail-footer .vehicle-footer-cta {
+  margin-bottom: 0;
+}
+
+/* Clearer visual separation between CTA area and footer details */
+.vehicle-detail-footer .footer-grid {
+  position: relative;
+}
+
+.vehicle-detail-footer .footer-grid::before {
+  content: "";
+  position: absolute;
+  top: -28px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile / tablet spacing */
+@media (max-width: 980px) {
+  .vehicle-detail-footer .vehicle-footer-cta-wrap {
+    padding-top: 36px;
+    padding-bottom: 38px;
+  }
+
+  .vehicle-detail-footer .footer-grid::before {
+    top: -22px;
+  }
+}
+
+@media (max-width: 650px) {
+  .vehicle-detail-footer .vehicle-footer-cta-wrap {
+    padding-top: 30px;
+    padding-bottom: 32px;
+  }
+
+  .vehicle-detail-footer .footer-grid::before {
+    top: -18px;
+  }
+}
+/* =========================================================
+   VEHICLE DETAIL FOOTER — CLEAN SPACING FIX
+   Keeps CTA inside footer but separates lower footer content
+   ========================================================= */
+
+.vehicle-detail-footer-main {
+  padding-top: 54px;
+}
+
+@media (max-width: 980px) {
+  .vehicle-detail-footer-main {
+    padding-top: 42px;
+  }
+}
+
+@media (max-width: 650px) {
+  .vehicle-detail-footer-main {
+    padding-top: 34px;
+  }
+}

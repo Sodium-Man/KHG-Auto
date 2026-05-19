@@ -2138,3 +2138,307 @@ h3 {
     border-radius: 22px;
   }
 }
+
+/* =========================================
+   MOBILE/TABLET: center Family section badge
+   ========================================= */
+@media (max-width: 980px) {
+  .family-band .eyebrow {
+    display: table;
+    margin: 0 auto 16px;
+    text-align: center;
+  }
+
+  .sell-finance-band > div:first-child .eyebrow {
+    display: table;
+    margin: 0 auto 16px;
+    text-align: center;
+  }
+
+  .sell-finance-band > div:first-child .btn.primary {
+    display: inline-flex;
+    margin: 18px auto 0;
+  }
+}
+
+/* =========================================
+   Warranty content heading spacing
+   ========================================= */
+.additional-benefits-block h2,
+.additional-benefits-block h1,
+.covered-components-block h2,
+.covered-components-block h1 {
+  margin-bottom: 18px;
+}
+
+.additional-benefits-block p,
+.covered-components-block p {
+  margin-top: 0;
+}
+
+/* =========================================
+   Warranty category title styling
+   Drive train / Comprehensive
+   ========================================= */
+.component-group-box {
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  border: 1px solid rgba(17, 137, 207, 0.10);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.06);
+}
+
+.component-group-box h3 {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 22px;
+  padding-bottom: 12px;
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.component-group-box h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 78px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #1189cf, #f2b705);
+}
+
+/* =========================================================
+   FINAL ALIGNMENT TUNING
+   - Centre Sell Your Car button on mobile/tablet
+   - Match warranty badge-to-heading spacing with Key Highlights
+   ========================================================= */
+
+@media (max-width: 980px) {
+  .sell-finance-band > div:first-child .btn.primary {
+    display: flex;
+    width: fit-content;
+    margin: 18px auto 0;
+  }
+}
+
+.additional-benefits-block h2,
+.additional-benefits-block h1,
+.covered-components-block h2,
+.covered-components-block h1 {
+  margin-top: 18px;
+}
+
+/* =========================================================
+   FINAL SECTION SPACING + WARRANTY OPTION CARD UPGRADE
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1) Keep the same badge/title gap for the first 3 sections
+   (Family section, Sell Your Car section, Contact CTA section)
+   Same feel as the warranty page spacing
+   --------------------------------------------------------- */
+.family-band > div:first-child .eyebrow,
+.sell-finance-band > div:first-child .eyebrow,
+.contact-cta-box .eyebrow {
+  margin-bottom: 18px;
+}
+
+.family-band > div:first-child h2,
+.sell-finance-band > div:first-child h2,
+.contact-cta-box h2 {
+  margin-top: 0;
+}
+
+/* Optional: slightly cleaner spacing below paragraph blocks */
+.family-band > div:first-child p,
+.sell-finance-band > div:first-child p,
+.contact-cta-box p {
+  margin-top: 0;
+}
+
+/* ---------------------------------------------------------
+   2) Make warranty option cards look more creative
+   --------------------------------------------------------- */
+.warranty-option-card {
+  position: relative;
+  overflow: hidden;
+  padding: 28px 26px 24px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(17, 137, 207, 0.10), transparent 34%),
+    radial-gradient(circle at bottom left, rgba(242, 183, 5, 0.12), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid rgba(17, 137, 207, 0.12);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.warranty-option-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  width: 84px;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #1189cf, #f2b705);
+}
+
+.warranty-option-card::after {
+  content: "Cover Plan";
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #0d6ea8;
+  background: rgba(17, 137, 207, 0.08);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.warranty-option-card h3 {
+  margin-top: 8px;
+  margin-bottom: 18px;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #0b1220;
+}
+
+.warranty-option-card p {
+  margin: 0 0 18px;
+  line-height: 1.65;
+  color: #4a5568;
+}
+
+.warranty-option-card strong {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.35;
+  color: #0b1220;
+}
+
+.warranty-option-card span {
+  display: block;
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 700;
+  color: #24324a;
+}
+
+/* Nice hover effect for desktop only */
+@media (hover: hover) and (pointer: fine) {
+  .warranty-option-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 52px rgba(0, 0, 0, 0.22);
+    border-color: rgba(17, 137, 207, 0.24);
+  }
+}
+
+/* ---------------------------------------------------------
+   3) Mobile / tablet refinements for option cards
+   --------------------------------------------------------- */
+@media (max-width: 980px) {
+  .warranty-option-card {
+    padding: 24px 22px 22px;
+    border-radius: 24px;
+  }
+
+  .warranty-option-card::before {
+    left: 20px;
+    width: 72px;
+  }
+
+  .warranty-option-card::after {
+    top: 14px;
+    right: 14px;
+    font-size: 11px;
+    padding: 5px 9px;
+  }
+
+  .warranty-option-card h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .warranty-option-card p {
+    margin-bottom: 16px;
+  }
+}
+
+/* =========================================================
+   DESKTOP ONLY — Warranty option cards full border style
+   ========================================================= */
+@media (min-width: 981px) {
+  .warranty-option-card {
+    border: 1.5px solid transparent;
+    background:
+      linear-gradient(180deg, #ffffff 0%, #f8fbff 100%) padding-box,
+      linear-gradient(135deg, #1189cf 0%, #f2b705 100%) border-box;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+  }
+
+  /* remove the small top colorful strip */
+  .warranty-option-card::before {
+    display: none;
+  }
+
+  /* remove the COVER PLAN badge */
+  .warranty-option-card::after {
+    display: none;
+    content: none;
+  }
+
+  /* optional: slightly cleaner spacing after removing badge */
+  .warranty-option-card h3 {
+    margin-top: 0;
+  }
+}
+
+/* =========================================================
+   WARRANTY OPTION TITLES + LIMIT TEXT REFINEMENT
+   ========================================================= */
+
+/* Warranty Option A, B, C, D, E bubble title */
+/* Option A, B, C, D, E — exact same bubble text colour */
+.warranty-option-card h3 {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 0 18px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: rgba(17, 137, 207, 0.11);
+  color: #0869a4 !important;
+  font-size: 24px;
+  font-weight: 950;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* Drive train limit */
+.warranty-option-card strong {
+  display: block;
+  margin-top: auto;
+  margin-bottom: 14px;
+  color: var(--blue-dark);
+  font-size: 15px;
+  font-weight: 950;
+  line-height: 1.45;
+}
+
+/* Comprehensive component limit */
+.warranty-option-card span {
+  display: block;
+  color: #9a7200;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.45;
+}

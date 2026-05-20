@@ -124,7 +124,7 @@ const vehicles = [
   {
   id: "2015-mazda-cx-5-grand-touring",
   title: "2015 Mazda CX-5 Grand Touring KE Series 2 Auto AWD",
-  price: 15900,
+  price: 14900,
   kms: "120,637 km",
   transmission: "Automatic",
   fuel: "Diesel",

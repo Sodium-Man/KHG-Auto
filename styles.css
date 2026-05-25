@@ -2518,3 +2518,34 @@ h3 {
     padding-top: 34px;
   }
 }
+/* =========================================================
+   MOBILE ONLY — Homepage alignment fixes
+   ========================================================= */
+
+@media (max-width: 650px) {
+  /* Center Family section title */
+  .family-band > div:first-child h2 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Center Sell Your Car section title */
+  .sell-finance-band > div:first-child h2 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Keep Contact CTA buttons smaller on mobile */
+  .contact-cta-box .hero-actions {
+    justify-content: center !important;
+    gap: 12px;
+  }
+
+  .contact-cta-box .hero-actions .btn {
+    width: auto;
+    min-width: 135px;
+    padding: 13px 24px;
+  }
+}

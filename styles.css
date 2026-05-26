@@ -2549,3 +2549,326 @@ h3 {
     padding: 13px 24px;
   }
 }
+
+/* =========================================================
+   COMPARE VEHICLES FEATURE
+   ========================================================= */
+
+.compare-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-bottom: 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(17, 137, 207, 0.11);
+  color: var(--blue-dark);
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.compare-check input {
+  width: auto;
+  margin: 0;
+  accent-color: var(--blue-dark);
+}
+
+.compare-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0 0 26px;
+  padding: 18px 20px;
+  border: 1px solid rgba(17, 137, 207, 0.16);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top left, rgba(242, 183, 5, 0.12), transparent 35%),
+    linear-gradient(135deg, #ffffff, #eef8ff);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+.compare-bar strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-size: 17px;
+}
+
+.compare-bar span {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.compare-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.compare-modal[hidden] {
+  display: none;
+}
+
+.compare-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.compare-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 7, 13, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.compare-modal-card {
+  position: relative;
+  z-index: 2;
+  width: min(980px, 96vw);
+  max-height: 88vh;
+  overflow: auto;
+  padding: 28px;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
+}
+
+.compare-modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.compare-modal-head h2 {
+  margin-top: 14px;
+}
+
+.compare-close {
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border-radius: 999px;
+  background: #eef8ff;
+  color: var(--blue-dark);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.compare-table-scroll {
+  overflow-x: auto;
+}
+
+.compare-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.compare-table th {
+  background: #f8fbff;
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.compare-table td:first-child {
+  color: var(--blue-dark);
+  font-weight: 950;
+}
+
+.compare-table td {
+  color: #374151;
+  font-weight: 700;
+}
+
+.compare-modal-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+body.compare-open {
+  overflow: hidden;
+}
+
+/* =========================================================
+   VEHICLE DETAIL AUTO-FILLED ENQUIRY FORM
+   ========================================================= */
+
+.vehicle-enquiry-card h3 {
+  margin: 16px 0 10px;
+  font-size: 26px;
+}
+
+.vehicle-auto-form {
+  margin-top: 18px;
+  box-shadow: none;
+  border: 0;
+  padding: 0;
+}
+
+.auto-vehicle-summary {
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: #eef8ff;
+  border: 1px solid rgba(17, 137, 207, 0.14);
+}
+
+.auto-vehicle-summary strong {
+  color: var(--ink);
+}
+
+.auto-vehicle-summary span {
+  color: var(--blue-dark);
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.vehicle-enquiry-submit {
+  background: linear-gradient(135deg, #1189cf, #6ec6f2);
+  color: #ffffff;
+  border: none;
+  font-weight: 900;
+  box-shadow: 0 12px 28px rgba(17, 137, 207, 0.28);
+}
+
+.vehicle-enquiry-submit:hover {
+  box-shadow: 0 16px 34px rgba(17, 137, 207, 0.38);
+}
+
+/* Mobile/tablet */
+@media (max-width: 980px) {
+  .compare-bar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .compare-actions {
+    width: 100%;
+  }
+
+  .compare-actions .btn {
+    flex: 1;
+  }
+}
+
+@media (max-width: 650px) {
+  .compare-bar {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .compare-modal {
+    padding: 14px;
+  }
+
+  .compare-modal-card {
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .compare-modal-head {
+    align-items: flex-start;
+  }
+
+  .compare-modal-head h2 {
+    font-size: 28px;
+  }
+
+  .compare-close {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .compare-table {
+    min-width: 620px;
+  }
+
+  .compare-modal-actions .btn {
+    width: 100%;
+  }
+
+  .vehicle-enquiry-card h3 {
+    font-size: 24px;
+  }
+}
+
+/* =========================================================
+   FIX — Compare bar hidden state + active navbar
+   ========================================================= */
+
+/* This fixes the compare bar showing when 0 vehicles are selected */
+.compare-bar[hidden],
+.compare-modal[hidden] {
+  display: none !important;
+}
+
+/* Active desktop nav colour */
+.topbar nav a.active {
+  color: var(--blue) !important;
+}
+
+/* Desktop hover underline only */
+@media (min-width: 981px) {
+  .topbar nav a {
+    position: relative;
+  }
+
+  .topbar nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--blue), var(--gold));
+    transition: width 0.22s ease;
+  }
+
+  .topbar nav a:hover::after,
+  .topbar nav a.active::after {
+    width: 100%;
+  }
+}
+
+/* Keep mobile menu clean, no underline */
+@media (max-width: 980px) {
+  .topbar nav a::after {
+    display: none !important;
+  }
+
+  .topbar nav a.active {
+    color: var(--blue-dark) !important;
+    background: #eef8ff;
+  }
+}
+
+/* Compare button disabled state */
+#openCompare:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

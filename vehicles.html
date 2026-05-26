@@ -142,11 +142,52 @@
       </button>
     </div>
 
-    <div class="vehicle-results-bar">
-      <span id="vehicleCount">Showing vehicles</span>
+   <div class="vehicle-results-bar">
+  <span id="vehicleCount">Showing vehicles</span>
+</div>
+
+<div id="compareBar" class="compare-bar" hidden>
+  <div>
+    <strong id="compareCount">0 vehicles selected</strong>
+    <span>Select up to 3 vehicles to compare price, kilometres and key details.</span>
+  </div>
+
+  <div class="compare-actions">
+    <button id="clearCompare" class="btn secondary" type="button">
+      Clear
+    </button>
+
+    <button id="openCompare" class="btn gold" type="button">
+      Compare Vehicles
+    </button>
+  </div>
+</div>
+
+<div id="vehicleList" class="vehicle-grid"></div>
+
+<div id="compareModal" class="compare-modal" hidden>
+  <div class="compare-modal-backdrop" data-close-compare></div>
+
+  <div class="compare-modal-card">
+    <div class="compare-modal-head">
+      <div>
+        <span class="eyebrow">Vehicle Comparison</span>
+        <h2>Compare selected vehicles</h2>
+      </div>
+
+      <button
+        class="compare-close"
+        type="button"
+        data-close-compare
+        aria-label="Close compare modal"
+      >
+        ×
+      </button>
     </div>
 
-    <div id="vehicleList" class="vehicle-grid"></div>
+    <div id="compareTableWrap" class="compare-table-wrap"></div>
+  </div>
+</div>
 
     <nav
       id="vehiclePagination"

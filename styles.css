@@ -3275,7 +3275,8 @@ body.compare-open {
     top: calc(100% + 10px);
     left: 50%;
     right: auto;
-    width: min(340px, calc(100vw - 32px));
+    width: calc(100vw - 32px);
+max-width: 352px;
     transform: translateX(-50%) translateY(-8px);
     padding: 16px;
     background: #ffffff;

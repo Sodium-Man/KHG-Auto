@@ -203,7 +203,7 @@ function setupAjaxForms() {
         form.reset();
 
         status.textContent =
-          "Thank you. Your enquiry has been sent to KHG Auto Workshops.";
+          "Thank you. Your enquiry has been sent to KHG Auto Carsales.";
         status.className = "form-status success";
       } catch (error) {
         status.textContent =
@@ -924,9 +924,12 @@ function setupVehicleDetail() {
         </div>
 
         ${externalListing}
-        ${vehicleEnquiryForm}
       </aside>
     </div>
+
+    <section class="vehicle-enquiry-wide-section">
+      ${vehicleEnquiryForm}
+    </section>
   `;
 
   const mainImage = root.querySelector("#mainVehicleImage");

@@ -204,7 +204,7 @@ const vehicles = [
   {
   id: "2015-fiat-500x-cross-plus",
   title: "2015 Fiat 500X Cross Plus Auto AWD",
-  price: 10500,
+  price: 9999,
   kms: "149,098 km",
   transmission: "Automatic",
   fuel: "Petrol",

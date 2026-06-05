@@ -52,7 +52,7 @@ const vehicles = [
   "assets/vehicles/Mercedes Benz M 2012 Wagon/car_34.png",
   "assets/vehicles/Mercedes Benz M 2012 Wagon/car_35.png"
 ],
-    description: "2012 Mercedes-Benz M-Class ML63 AMG Auto 4x4 finished in Obsidian Black with black interior. Powered by a 5.5L twin-turbo V8 AMG engine producing 386kW and 700Nm, paired with a 7-speed SPEEDSHIFT automatic and 4MATIC all-wheel drive. Features include sunroof, leather interior with electric seats, satellite navigation, reverse camera, parking sensors, Bluetooth, premium sound system, keyless entry, push-button start, AMG alloy wheels and strong AMG performance luxury. Dealer listing shows 143,000km, roadworthy certificate included, registered and ready to drive away, with 12-month premium warranty available.",
+    description: "2012 Mercedes-Benz M-Class ML63 AMG Auto 4x4 finished in Obsidian Black with black interior. Powered by a 5.5L twin-turbo V8 AMG engine producing 386kW and 700Nm, paired with a 7-speed SPEEDSHIFT automatic and 4MATIC all-wheel drive. Dealer listing shows 143,000km, roadworthy certificate included, registered and ready to drive away, with 12-month premium warranty available.",
     carsalesUrl: "https://www.carsales.com.au/cars/details/mercedes-benz-m-class-2012/oag-ad-25759848/?_ga=2.17678523.308244152.1778121915-1659496573.1769044340",
     externalListing: {
       label: "Official Carsales Listing",
@@ -94,7 +94,7 @@ const vehicles = [
     "assets/vehicles/Nissan Qashqai 2015/car_14.png"
   ],
   carsalesUrl: "https://www.carsales.com.au/cars/details/nissan-qashqai-2015/oag-ad-25806740/",
-  description: "2015 Nissan QASHQAI ST J11 Auto finished in Ivory Pearl with black interior. A reliable, economical and practical 5-seat SUV, ideal for daily driving, first car buyers or small families. Powered by a 2.0L 4-cylinder petrol engine with automatic CVT transmission and front-wheel drive, offering smooth driving and excellent fuel economy of 6.9L/100km combined. Features include reverse camera, Bluetooth connectivity, cruise control, air conditioning, power windows, multi-function steering wheel, USB/AUX input, 17-inch alloy wheels, LED daytime running lights, remote central locking and a spacious 430L boot. This QASHQAI has travelled 151,335km and is listed as drive away with roadworthy certificate included, registration until January 2027 and 12–36 month extended warranty options available.",
+  description: "2015 Nissan QASHQAI ST J11 Auto finished in Ivory Pearl with black interior. A reliable, economical and practical 5-seat SUV, ideal for daily driving, first car buyers or small families. Powered by a 2.0L 4-cylinder petrol engine with automatic CVT transmission and front-wheel drive, offering smooth driving and excellent fuel economy of 6.9L/100km combined. This QASHQAI has travelled 151,335km and is listed as drive away with roadworthy certificate included, registration until January 2027 and 12–36 month extended warranty options available.",
   features: [
     "Reverse camera",
     "Bluetooth",
@@ -164,7 +164,7 @@ const vehicles = [
     "assets/vehicles/Jeep Grand Cherokee 2014/car_24.png"
   ],
   carsalesUrl: "https://www.carsales.com.au/cars/details/jeep-grand-cherokee-2014/oag-ad-25730228/",
-  description: "2014 Jeep Grand Cherokee Overland Auto 4x4 MY15 finished in Maximum Steel with black interior. A top-of-the-range luxury diesel SUV powered by a strong and efficient 3.0L turbo diesel V6 engine paired with an 8-speed sports automatic transmission and 4x4 capability. Features include premium leather interior, heated and ventilated front seats, panoramic sunroof, satellite navigation, Bluetooth, reverse camera, front and rear parking sensors, blind spot monitoring, keyless entry, push-button start, premium 9-speaker sound system with subwoofer, electric tailgate, alloy wheels, dual-zone climate control and a 5-star ANCAP safety rating. This Grand Cherokee has travelled 137,271km and is listed as drive away with roadworthy certificate provided and 1 year premium warranty included.",
+  description: "2014 Jeep Grand Cherokee Overland Auto 4x4 MY15 finished in Maximum Steel with black interior. A top-of-the-range luxury diesel SUV powered by a strong and efficient 3.0L turbo diesel V6 engine paired with an 8-speed sports automatic transmission and 4x4 capability. This Grand Cherokee has travelled 137,271km and is listed as drive away with roadworthy certificate provided and 1 year premium warranty included.",
   features: [
     "Panoramic sunroof",
     "Premium leather interior",
@@ -245,7 +245,7 @@ const vehicles = [
     "assets/vehicles/Fiat 500X 2015/car_25.png"
   ],
   carsalesUrl: "https://www.carsales.com.au/cars/details/fiat-500x-2015/oag-ad-25759880/",
-  description: "2015 Fiat 500X Cross Plus Auto AWD finished in Graphite Grey with black interior. A stylish compact SUV with European design, strong practicality and all-wheel drive confidence. Powered by a 1.4L turbo petrol engine paired with a 9-speed sports automatic transmission and AWD system, offering smooth performance and efficient combined fuel economy of 6.7L/100km. Features include leather interior, heated front seats, reverse camera, rear parking sensors, Bluetooth connectivity, GPS satellite navigation, blind spot monitoring, lane departure warning, AEB, cruise control, dual-zone climate control, touchscreen infotainment, keyless entry, push-button start, 18-inch alloy wheels, fog lights, roof rails, power windows and mirrors, multifunction steering wheel and a 5-star ANCAP safety rating. This Fiat 500X has travelled 149,098km and is listed as drive away with roadworthy certificate provided, finance available and 12 month warranty included.",
+  description: "2015 Fiat 500X Cross Plus Auto AWD finished in Graphite Grey with black interior. A stylish compact SUV with European design, strong practicality and all-wheel drive confidence. Powered by a 1.4L turbo petrol engine paired with a 9-speed sports automatic transmission and AWD system, offering smooth performance and efficient combined fuel economy of 6.7L/100km. This Fiat 500X has travelled 149,098km and is listed as drive away with roadworthy certificate provided, finance available and 12 month warranty included.",
   features: [
     "All wheel drive",
     "Leather interior",
@@ -324,7 +324,7 @@ const vehicles = [
     "assets/vehicles/Holden Trax 2014/car_20.png"
   ],
   carsalesUrl: "https://www.carsales.com.au/cars/details/holden-trax-2014/oag-ad-25794800/",
-  description: "2014 Holden Trax LS TJ Auto MY14 finished in Snowflake White with black interior. A compact, economical and practical small SUV that is easy to drive and park, making it ideal for first car buyers, daily commuting or anyone wanting a reliable automatic vehicle. Powered by a 1.8L petrol 4-cylinder engine paired with a 6-speed automatic transmission and front-wheel drive. Features include Bluetooth connectivity, reverse camera, rear parking sensors, cruise control, automatic headlights, air conditioning, power windows and mirrors, remote central locking, 16-inch alloy wheels, roof rails, 6-speaker stereo, USB/AUX input, split-fold rear seats and a spacious 5-seat interior. This Trax has travelled 95,573km and is listed as roadworthy certificate included, registered and ready to go, with 12 month warranty included.",
+  description: "2014 Holden Trax LS TJ Auto MY14 finished in Snowflake White with black interior. A compact, economical and practical small SUV that is easy to drive and park, making it ideal for first car buyers, daily commuting or anyone wanting a reliable automatic vehicle. Powered by a 1.8L petrol 4-cylinder engine paired with a 6-speed automatic transmission and front-wheel drive. This Trax has travelled 95,573km and is listed as roadworthy certificate included, registered and ready to go, with 12 month warranty included.",
   features: [
     "Reverse camera",
     "Rear parking sensors",
@@ -399,7 +399,7 @@ const vehicles = [
     "assets/vehicles/Land Rover Discovery 2017/car_28.png"
   ],
   carsalesUrl: "https://www.carsales.com.au/cars/details/land-rover-discovery-sport-2017/oag-ad-25819626/",
-  description: "2017 Land Rover Discovery Sport TD4 132kW HSE Auto 4x4 MY18 finished in Fuji White with black interior. A premium SUV that combines luxury, comfort, practicality and capable all-wheel-drive performance. Powered by a 2.0L turbo diesel 4-cylinder engine paired with a 9-speed sports automatic transmission, producing 132kW and 430Nm with excellent combined fuel economy of 5.3L/100km. Features include leather interior, electric memory seats, panoramic glass roof, satellite navigation, reverse camera, front and rear parking sensors, power tailgate, keyless entry, push-button start, dual-zone climate control, cruise control, lane keep assist, autonomous emergency braking, Meridian premium sound system, alloy wheels, LED daytime running lights and a 5-star ANCAP safety rating. This Discovery Sport has travelled 93,780km and is listed as roadworthy certificate provided, finance available and 12 month warranty included.",
+  description: "2017 Land Rover Discovery Sport TD4 132kW HSE Auto 4x4 MY18 finished in Fuji White with black interior. A premium SUV that combines luxury, comfort, practicality and capable all-wheel-drive performance. Powered by a 2.0L turbo diesel 4-cylinder engine paired with a 9-speed sports automatic transmission, producing 132kW and 430Nm with excellent combined fuel economy of 5.3L/100km. This Discovery Sport has travelled 93,780km and is listed as roadworthy certificate provided, finance available and 12 month warranty included.",
   features: [
     "Leather interior",
     "Electric memory seats",
@@ -486,7 +486,7 @@ const vehicles = [
     "assets/vehicles/Land Rover Discovery Sport 2017/car_24.png"
   ],
   carsalesUrl: "https://www.carsales.com.au/cars/details/land-rover-discovery-sport-2017/oag-ad-25759189/",
-  description: "2017 Land Rover Discovery Sport SD4 HSE Auto 4x4 MY18 finished in Fuji White with black interior. A premium and practical luxury SUV offering strong diesel performance, excellent comfort and confident 4x4 capability. Powered by a 2.0L twin turbo diesel 4-cylinder engine paired with a 9-speed sports automatic transmission, producing 177kW and 500Nm. Features include full leather interior, panoramic glass roof, heated and ventilated front seats, electric memory seats, satellite navigation, reverse camera, front and rear parking sensors, keyless entry, push-button start, dual-zone climate control, Bluetooth connectivity, Meridian premium sound system, power tailgate, cruise control, lane departure warning, forward collision warning, autonomous emergency braking and 19-inch alloy wheels. This Discovery Sport has travelled 116,120km and is listed as drive away with 12 months premium warranty included.",
+  description: "2017 Land Rover Discovery Sport SD4 HSE Auto 4x4 MY18 finished in Fuji White with black interior. A premium and practical luxury SUV offering strong diesel performance, excellent comfort and confident 4x4 capability. Powered by a 2.0L twin turbo diesel 4-cylinder engine paired with a 9-speed sports automatic transmission, producing 177kW and 500Nm. This Discovery Sport has travelled 116,120km and is listed as drive away with 12 months premium warranty included.",
   features: [
     "Full leather interior",
     "Panoramic glass roof",
@@ -571,7 +571,7 @@ const vehicles = [
     "assets/vehicles/Volvo C30 2009/car_18.png"
   ],
   carsalesUrl: "https://www.carsales.com.au/cars/details/volvo-c30-2009/oag-ad-25759905/",
-  description: "2009 Volvo C30 S Auto MY10 finished in Ice White with black interior. A stylish and sporty 3-door European hatchback that stands out from the usual small cars, offering a distinctive design, comfortable cabin and strong Volvo safety credentials. Powered by a smooth 2.4L aspirated 5-cylinder petrol engine paired with a 5-speed Geartronic automatic transmission and front-wheel drive. Features include leather interior, climate control air conditioning, cruise control, premium sound system, alloy wheels, front and rear fog lamps, heated electric mirrors, power windows, multi-function steering wheel, trip computer, AUX input and a practical 4-seat cabin. This Volvo C30 has travelled 192,000km and is listed as drive away with roadworthy certificate included, registered and ready to go, with 12 month warranty included.",
+  description: "2009 Volvo C30 S Auto MY10 finished in Ice White with black interior. A stylish and sporty 3-door European hatchback that stands out from the usual small cars, offering a distinctive design, comfortable cabin and strong Volvo safety credentials. Powered by a smooth 2.4L aspirated 5-cylinder petrol engine paired with a 5-speed Geartronic automatic transmission and front-wheel drive. This Volvo C30 has travelled 192,000km and is listed as drive away with roadworthy certificate included, registered and ready to go, with 12 month warranty included.",
   features: [
     "Stylish 3-door hatch design",
     "Leather interior",
@@ -646,7 +646,7 @@ const vehicles = [
     "assets/vehicles/BMW X5 2015 Black/car_26.png"
   ],
   carsalesUrl: "https://www.carsales.com.au/cars/details/bmw-x5-2015/oag-ad-25819559/",
-  description: "2015 BMW X5 xDrive30d F15 Auto 4x4 finished in Azurite Black with black interior. A highly optioned luxury SUV offering powerful turbo diesel performance, premium comfort and strong practicality. Powered by a 3.0L 6-cylinder turbo diesel engine paired with an 8-speed sports automatic transmission and BMW xDrive all-wheel drive. Features include 7-seat configuration, full leather interior, electric memory seats, panoramic sunroof, satellite navigation, reverse camera, front and rear parking sensors, 360 degree camera, adaptive cruise control, lane departure warning, blind spot monitoring, dual-zone climate control, power tailgate, keyless entry, push-button start, premium sound system and 19-inch alloy wheels. This X5 has travelled 156,605km and is listed with roadworthy certificate provided, finance available and 12 month warranty included.",
+  description: "2015 BMW X5 xDrive30d F15 Auto 4x4 finished in Azurite Black with black interior. A highly optioned luxury SUV offering powerful turbo diesel performance, premium comfort and strong practicality. Powered by a 3.0L 6-cylinder turbo diesel engine paired with an 8-speed sports automatic transmission and BMW xDrive all-wheel drive. This X5 has travelled 156,605km and is listed with roadworthy certificate provided, finance available and 12 month warranty included.",
   features: [
     "7 seat configuration",
     "Full leather interior",
@@ -732,7 +732,7 @@ const vehicles = [
     "assets/vehicles/Nissan Serena 2015/car_18.png"
   ],
   carsalesUrl: "https://www.carsales.com.au/cars/details/nissan-serena-2015/oag-ad-25759861/",
-  description: "2015 Nissan Serena 20G S-Hybrid C26 Auto finished in Maroon with black interior. A spacious, practical and economical 8-seater wagon that is ideal for families, rideshare use or anyone needing maximum interior space and comfort. Powered by a 2.0L petrol engine with S-Hybrid mild hybrid technology, paired with an automatic CVT transmission and front-wheel drive. Features include 8-seat capacity, dual sliding doors, reverse camera, Bluetooth connectivity, cruise control, climate control air conditioning, keyless entry, push-button start, alloy wheels, smooth automatic driving and excellent cabin flexibility. This Nissan Serena has travelled 115,000km and is listed as drive away with roadworthy certificate included, registered and ready to drive, with 12 month warranty included.",
+  description: "2015 Nissan Serena 20G S-Hybrid C26 Auto finished in Maroon with black interior. A spacious, practical and economical 8-seater wagon that is ideal for families, rideshare use or anyone needing maximum interior space and comfort. Powered by a 2.0L petrol engine with S-Hybrid mild hybrid technology, paired with an automatic CVT transmission and front-wheel drive. This Nissan Serena has travelled 115,000km and is listed as drive away with roadworthy certificate included, registered and ready to drive, with 12 month warranty included.",
   features: [
     "8 seat capacity",
     "S-Hybrid technology",
@@ -807,7 +807,7 @@ const vehicles = [
     "assets/vehicles/BMW 2 Series 2016/car_24.png"
   ],
   carsalesUrl: "https://www.carsales.com.au/cars/details/bmw-2-series-2016/oag-ad-25897808/",
-  description: "2016 BMW 2 Series 228i Sport Line F22 Auto finished in white with a stylish coupe body. A sporty and refined 2-door BMW coupe offering strong turbo petrol performance, premium comfort and everyday usability. Powered by a 2.0L turbo intercooled 4-cylinder petrol engine paired with an 8-speed sports automatic transmission and rear-wheel drive. Features include Bluetooth, reversing camera, GPS satellite navigation, front and rear parking sensors, cruise control, automatic headlights, bi-xenon headlights, dual-zone climate control, leather interior, sports front seats, push-button start, digital radio, USB/AUX input, paddle shifters, selectable driving modes, 18-inch alloy wheels and traction/stability control. This BMW 228i has travelled 94,880km and is listed with 12 month warranty included.",
+  description: "2016 BMW 2 Series 228i Sport Line F22 Auto finished in white with a stylish coupe body. A sporty and refined 2-door BMW coupe offering strong turbo petrol performance, premium comfort and everyday usability. Powered by a 2.0L turbo intercooled 4-cylinder petrol engine paired with an 8-speed sports automatic transmission and rear-wheel drive. This BMW 228i has travelled 94,880km and is listed with 12 month warranty included.",
   features: [
     "Bluetooth",
     "Reverse camera",
@@ -898,7 +898,7 @@ const vehicles = [
     "assets/vehicles/Audi A3 2015/car_24.png"
   ],
   carsalesUrl: "https://www.carsales.com.au/cars/details/audi-a3-2015/oag-ad-25918087/",
-  description: "2015 Audi A3 Attraction Cabriolet Auto MY16 finished in Glacier White with black interior. A stylish, sporty and economical premium European convertible offering open-top driving, smooth performance and everyday comfort. Powered by a 1.4L turbo intercooled 4-cylinder petrol engine paired with a 7-speed S tronic automatic transmission and front-wheel drive. Features include electric soft top convertible roof, leather interior, Bluetooth connectivity, reverse camera, front and rear parking sensors, dual-zone climate control, push-button start, cruise control, multi-function steering wheel, Audi Drive Select, automatic headlights, LED daytime running lights, rain-sensing wipers, premium audio system and 17-inch alloy wheels. This Audi A3 has travelled 122,246km and is listed with finance available and extended warranty packages available.",
+  description: "2015 Audi A3 Attraction Cabriolet Auto MY16 finished in Glacier White with black interior. A stylish, sporty and economical premium European convertible offering open-top driving, smooth performance and everyday comfort. Powered by a 1.4L turbo intercooled 4-cylinder petrol engine paired with a 7-speed S tronic automatic transmission and front-wheel drive. This Audi A3 has travelled 122,246km and is listed with finance available and extended warranty packages available.",
   features: [
     "Electric soft top convertible",
     "Leather interior",
@@ -976,7 +976,7 @@ const vehicles = [
     "assets/vehicles/Volkswagen Polo 2011/car_17.png"
   ],
   carsalesUrl: "https://www.carsales.com.au/cars/details/volkswagen-polo-2011/oag-ad-25758432/",
-  description: "2011 Volkswagen Polo GTI 6R Auto MY11 finished in Deep Black with black interior. A fun, sporty and practical compact hot hatch offering strong GTI performance, easy daily driving and great fuel economy. Powered by a 1.4L turbocharged and supercharged 4-cylinder petrol engine paired with a 7-speed DSG automatic transmission and front-wheel drive. Features include sport seats, cruise control, Bluetooth connectivity, alloy wheels, power windows, central locking, front and rear fog lights, multi-function steering wheel, paddle shifters, trip computer, sports suspension and excellent compact hatch practicality. This Polo GTI has travelled 136,200km and is listed as drive away with roadworthy certificate provided, registered and ready to drive, with 12 month warranty included.",
+  description: "2011 Volkswagen Polo GTI 6R Auto MY11 finished in Deep Black with black interior. A fun, sporty and practical compact hot hatch offering strong GTI performance, easy daily driving and great fuel economy. Powered by a 1.4L turbocharged and supercharged 4-cylinder petrol engine paired with a 7-speed DSG automatic transmission and front-wheel drive.",
   features: [
     "GTI performance hatch",
     "1.4L turbo supercharged engine",
@@ -1047,7 +1047,7 @@ const vehicles = [
     "assets/vehicles/Land Rover Roque 2014/car_12.png"
   ],
   carsalesUrl: "https://www.carsales.com.au/cars/details/land-rover-range-rover-evoque-2014/oag-ad-25830599/",
-  description: "2014 Land Rover Range Rover Evoque TD4 Auto 4x4 finished in white with a premium black interior. A stylish and capable luxury compact SUV offering Range Rover design, strong turbo diesel efficiency and confident all-wheel-drive practicality. Powered by a 2.2L turbo diesel 4-cylinder engine paired with an automatic transmission and 4x4 drivetrain. Features include leather interior, reverse camera, parking sensors, Bluetooth connectivity, cruise control, climate control air conditioning, automatic headlights, push-button start, alloy wheels, multi-function steering wheel, electric mirrors, power windows, hill descent control and strong SUV road presence. This Range Rover Evoque has travelled 148,597km and is listed with roadworthy certificate provided, finance available and 12 month warranty included.",
+  description: "2014 Land Rover Range Rover Evoque TD4 Auto 4x4 finished in white with a premium black interior. A stylish and capable luxury compact SUV offering Range Rover design, strong turbo diesel efficiency and confident all-wheel-drive practicality. Powered by a 2.2L turbo diesel 4-cylinder engine paired with an automatic transmission and 4x4 drivetrain.",
   features: [
     "Luxury compact SUV",
     "4x4 drivetrain",

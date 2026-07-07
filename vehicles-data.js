@@ -2,7 +2,7 @@ const vehicles = [
   {
   id: "2015-nissan-qashqai-st",
   title: "2015 Nissan QASHQAI ST J11 Auto",
-  price: 12999,
+  price: 12550,
   kms: "151,335 km",
   transmission: "Automatic",
   fuel: "Petrol",

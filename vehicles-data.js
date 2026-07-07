@@ -156,7 +156,7 @@ const vehicles = [
 {
   id: "2016-bmw-2-series-228i-sport-line",
   title: "2016 BMW 2 Series 228i Sport Line F22 Auto",
-  price: 21990,
+  price: 19999,
   kms: "94,880 km",
   transmission: "Automatic",
   fuel: "Petrol",

@@ -247,7 +247,7 @@ const vehicles = [
 {
   id: "2011-volkswagen-polo-gti",
   title: "2011 Volkswagen Polo GTI 6R Auto MY11",
-  price: 11999,
+  price: 11000,
   kms: "136,200 km",
   transmission: "Automatic",
   fuel: "Petrol",

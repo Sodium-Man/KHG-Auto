@@ -501,6 +501,7 @@ const vehicles = [
   imageLabel: "Range Rover Evoque",
   image: "assets/vehicles/Range Rover Evoque 2014/car_01.png",
   images: [
+    "assets/vehicles/Range Rover Evoque 2014/car_05.png",
     "assets/vehicles/Range Rover Evoque 2014/car_01.png",
     "assets/vehicles/Range Rover Evoque 2014/car_02.png",
     "assets/vehicles/Range Rover Evoque 2014/car_03.png",

@@ -187,7 +187,7 @@ const vehicles = [
 {
   id: "2012-volkswagen-tiguan-132tsi-pacific",
   title: "2012 Volkswagen Tiguan 132TSI Pacific 5N Auto 4MOTION MY12.5",
-  price: 7888,
+  price: 7342,
   kms: "202,000 km",
   transmission: "Automatic",
   fuel: "Petrol",
@@ -254,7 +254,7 @@ const vehicles = [
 {
   id: "2017-mercedes-benz-gla220d",
   title: "2017 Mercedes-Benz GLA-Class GLA220 d Auto",
-  price: 18888,
+  price: 17500,
   kms: "125,349 km",
   transmission: "Automatic",
   fuel: "Diesel",
@@ -335,7 +335,7 @@ const vehicles = [
 {
   id: "2015-mazda-cx5-grand-touring",
   title: "2015 Mazda CX-5 Grand Touring KE Series 2 Auto AWD",
-  price: 12222,
+  price: 11990,
   kms: "162,350 km",
   transmission: "Automatic",
   fuel: "Diesel",
@@ -411,8 +411,8 @@ const vehicles = [
 {
   id: "2017-land-rover-discovery-sport-sd4-hse",
   title: "2017 Land Rover Discovery Sport SD4 HSE Auto 4x4 MY18",
-  price: 18285,
-  kms: "86,408 km",
+  price: 17553,
+  kms: "93,780 km",
   transmission: "Automatic",
   fuel: "Diesel",
   warranty: "12 month premium warranty included",
@@ -507,7 +507,7 @@ const vehicles = [
 {
   id: "2021-land-rover-discovery-sport-p200-r-dynamic-s",
   title: "2021 Land Rover Discovery Sport P200 R-Dynamic S Auto 4x4 MY21",
-  price: 30152,
+  price: 27888,
   kms: "106,147 km",
   transmission: "Automatic",
   fuel: "Petrol",
@@ -604,7 +604,7 @@ const vehicles = [
 {
   id: "2015-kia-sorento-platinum-awd",
   title: "2015 Kia Sorento Platinum Auto AWD MY15",
-  price: 16000,
+  price: 17762,
   kms: "123,604 km",
   transmission: "Automatic",
   fuel: "Diesel",
@@ -876,6 +876,7 @@ const vehicles = [
   imageLabel: "BMW X1",
   image: "assets/vehicles/BMW X1 2013/car_03.png",
   images: [
+    "assets/vehicles/BMW X1 2013/car_19.png",
     "assets/vehicles/BMW X1 2013/car_03.png",
     "assets/vehicles/BMW X1 2013/car_02.png",
     "assets/vehicles/BMW X1 2013/car_04.png",

@@ -1768,7 +1768,6 @@ const vehicles = [
   imageLabel: "Holden Captiva",
   image: "assets/vehicles/Holden Captiva 2011/car_01.png",
   images: [
-    "assets/vehicles/Holden Captiva 2011/car_06.png",
     "assets/vehicles/Holden Captiva 2011/car_02.png",
     "assets/vehicles/Holden Captiva 2011/car_01.png",
     "assets/vehicles/Holden Captiva 2011/car_03.png",

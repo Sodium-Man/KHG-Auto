@@ -783,6 +783,19 @@ const soldVehicles = [
   stockNo: "KHGVW",
   image: "assets/vehicles/Volkswagen Golf Alltrack 2018/car_01.png",
   soldText: "Sold"
+},
+{
+  id: "sold-2021-volkswagen-tiguan-110tsi-life",
+  title: "2021 Volkswagen Tiguan 110TSI Life 5N MY22",
+  price: 21999,
+  kms: "110,869 km",
+  transmission: "Automatic",
+  fuel: "Petrol",
+  body: "Wagon",
+  colour: "Pure White",
+  stockNo: "KHGAUTOTIGUAN2021",
+  image: "assets/vehicles/Volskwagen Tiguan 2021/car_01.png",
+  soldText: "Sold"
 }
 ];
 

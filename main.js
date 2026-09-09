@@ -500,10 +500,12 @@ function setupCompareFeature() {
 function setupVehicleLists() {
   if (typeof vehicles === "undefined") return;
 
+  const availableVehicles = vehicles.filter(vehicle => vehicle.status !== "sold");
+
   const featured = document.getElementById("featuredVehicles");
 
   if (featured) {
-    featured.innerHTML = vehicles
+    featured.innerHTML = availableVehicles
       .slice(0, 3)
       .map(vehicle => vehicleCard(vehicle, { compare: false }))
       .join("");
@@ -540,9 +542,9 @@ function setupVehicleLists() {
       });
   };
 
-  addOptions(bodyFilter, vehicles.map(v => v.body));
-  addOptions(transmissionFilter, vehicles.map(v => v.transmission));
-  addOptions(fuelFilter, vehicles.map(v => v.fuel));
+  addOptions(bodyFilter, availableVehicles.map(v => v.body));
+  addOptions(transmissionFilter, availableVehicles.map(v => v.transmission));
+  addOptions(fuelFilter, availableVehicles.map(v => v.fuel));
 
   const getKmNumber = v =>
     Number(String(v.kms).replace(/[^0-9]/g, "")) || 0;
@@ -558,7 +560,7 @@ function setupVehicleLists() {
     const fuel = fuelFilter?.value || "all";
     const sort = sortFilter?.value || "featured";
 
-    const filtered = vehicles.filter(v => {
+    const filtered = availableVehicles.filter(v => {
       const text =
         `${v.title} ${v.kms} ${v.transmission} ${v.fuel} ${v.body} ${v.colour} ${v.engine} ${v.stockNo}`.toLowerCase();
 
@@ -577,7 +579,7 @@ function setupVehicleLists() {
       if (sort === "year-new") return getYearNumber(b) - getYearNumber(a);
       if (sort === "year-old") return getYearNumber(a) - getYearNumber(b);
       if (sort === "km-low") return getKmNumber(a) - getKmNumber(b);
-      return vehicles.indexOf(a) - vehicles.indexOf(b);
+      return availableVehicles.indexOf(a) - availableVehicles.indexOf(b);
     });
   }
 
@@ -673,7 +675,7 @@ function setupVehicleLists() {
       if (filtered.length === 0) {
         count.textContent = "No vehicles found";
       } else {
-        count.textContent = `Showing ${start + 1}-${start + shown.length} of ${filtered.length} vehicles`;
+        count.textContent = `Showing ${start + 1}-${start + shown.length} of ${filtered.length} available vehicles`;
       }
     }
 
@@ -1090,7 +1092,17 @@ function setupSoldVehicles() {
   const soldList = document.getElementById("soldVehiclesList");
   const soldPagination = document.getElementById("soldVehiclePagination");
 
-  if (!soldList || typeof soldVehicles === "undefined") return;
+  if (!soldList) return;
+
+  const soldFromMainVehicles =
+    typeof vehicles !== "undefined"
+      ? vehicles.filter(vehicle => vehicle.status === "sold")
+      : [];
+
+  const extraSoldVehicles =
+    typeof soldVehicles !== "undefined" ? soldVehicles : [];
+
+  const allSoldVehicles = [...soldFromMainVehicles, ...extraSoldVehicles];
 
   const soldPerPage = 6;
   let currentSoldPage = 1;
@@ -1154,14 +1166,14 @@ function setupSoldVehicles() {
   }
 
   function renderSoldVehicles() {
-    const totalPages = Math.max(1, Math.ceil(soldVehicles.length / soldPerPage));
+    const totalPages = Math.max(1, Math.ceil(allSoldVehicles.length / soldPerPage));
 
     if (currentSoldPage > totalPages) {
       currentSoldPage = totalPages;
     }
 
     const start = (currentSoldPage - 1) * soldPerPage;
-    const shown = soldVehicles.slice(start, start + soldPerPage);
+    const shown = allSoldVehicles.slice(start, start + soldPerPage);
 
     soldList.innerHTML =
       shown.map(vehicle => soldVehicleCard(vehicle)).join("") ||

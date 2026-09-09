@@ -744,7 +744,20 @@ const soldVehicles = [
     stockNo: "KHGVOLVOC30",
     image: "assets/vehicles/Volvo C30 2009/car_01.png",
     soldText: "Sold"
-  }
+  },
+  {
+  id: "sold-2018-volkswagen-tiguan-162tsi-highline",
+  title: "2018 Volkswagen Tiguan 162TSI Highline 5N MY19",
+  price: 22990,
+  kms: "111,190 km",
+  transmission: "Automatic",
+  fuel: "Petrol",
+  body: "Wagon",
+  colour: "Pure White",
+  stockNo: "KHGTIGUAN",
+  image: "assets/vehicles/Volkswagen Tiguan 2018/car_01.png",
+  soldText: "Sold"
+}
 ];
 
 const services = [

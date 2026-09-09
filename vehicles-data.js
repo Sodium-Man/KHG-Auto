@@ -770,6 +770,19 @@ const soldVehicles = [
   stockNo: "KHGVWTOUAREG",
   image: "assets/vehicles/Volkswagen Toureg 2017/car_01.png",
   soldText: "Sold"
+},
+{
+  id: "sold-2018-volkswagen-golf-alltrack-132tsi-premium",
+  title: "2018 Volkswagen Golf Alltrack 132TSI Premium 7.5 Auto 4MOTION MY19",
+  price: 12990,
+  kms: "191,772 km",
+  transmission: "Automatic",
+  fuel: "Petrol",
+  body: "Wagon",
+  colour: "Pure White",
+  stockNo: "KHGVW",
+  image: "assets/vehicles/Volkswagen Golf Alltrack 2018/car_01.png",
+  soldText: "Sold"
 }
 ];
 

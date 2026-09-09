@@ -796,6 +796,19 @@ const soldVehicles = [
   stockNo: "KHGAUTOTIGUAN2021",
   image: "assets/vehicles/Volskwagen Tiguan 2021/car_01.png",
   soldText: "Sold"
+},
+{
+  id: "sold-2012-volkswagen-caddy-tdi320-maxi",
+  title: "2012 Volkswagen Caddy TDI320 Maxi 2KN MY13",
+  price: 7340,
+  kms: "326,000 km",
+  transmission: "Automatic",
+  fuel: "Diesel",
+  body: "Van",
+  colour: "Toffee Brown",
+  stockNo: "KHGVWVANCQDDY",
+  image: "assets/vehicles/Volkswagen Caddy 2012/car_01.png",
+  soldText: "Sold"
 }
 ];
 

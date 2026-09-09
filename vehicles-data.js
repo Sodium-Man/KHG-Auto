@@ -809,6 +809,19 @@ const soldVehicles = [
   stockNo: "KHGVWVANCQDDY",
   image: "assets/vehicles/Volkswagen Caddy 2012/car_01.png",
   soldText: "Sold"
+},
+{
+  id: "sold-2018-toyota-chr-ngx10r",
+  title: "2018 Toyota C-HR NGX10R Wagon 2WD",
+  price: 19990,
+  kms: "115,030 km",
+  transmission: "Automatic",
+  fuel: "Petrol",
+  body: "Wagon",
+  colour: "Crystal Pearl",
+  stockNo: "KHGTOYOTA RAV",
+  image: "assets/vehicles/Toyota CHR 2018/car_01.png",
+  soldText: "Sold"
 }
 ];
 

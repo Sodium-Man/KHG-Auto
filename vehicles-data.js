@@ -757,6 +757,19 @@ const soldVehicles = [
   stockNo: "KHGTIGUAN",
   image: "assets/vehicles/Volkswagen Tiguan 2018/car_01.png",
   soldText: "Sold"
+},
+{
+  id: "sold-2017-volkswagen-touareg-150tdi-element",
+  title: "2017 Volkswagen Touareg 150TDI Element 7P MY17",
+  price: 18000,
+  kms: "136,200 km",
+  transmission: "Automatic",
+  fuel: "Diesel",
+  body: "Wagon",
+  colour: "Canyon Grey",
+  stockNo: "KHGVWTOUAREG",
+  image: "assets/vehicles/Volkswagen Toureg 2017/car_01.png",
+  soldText: "Sold"
 }
 ];
 
